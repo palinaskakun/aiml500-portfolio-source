@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eeece3" />
+    <meta name="description" content="Tune into Palina Skakun's portfolio: software engineering, AI and machine learning, and a healthy dose of nostalgia." />
+    <title>Palina Home Video — A portfolio worth playing</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#screen-content">Skip to portfolio</a>
+    <header class="site-header">
+      <a class="brand" href="#profiles" aria-label="Palina Home Video, choose viewer">
+        <span class="brand-mark" aria-hidden="true">p<span>✳</span></span>
+        <span>PALINA<br /><b>HOME VIDEO</b></span>
+      </a>
+      <span class="header-edition">A PERSONAL PORTFOLIO <span>•</span> VOL. 01</span>
+      <a class="header-link" href="#about">A little about the human <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="stage" id="main">
+      <div class="stage-heading">
+        <span><i class="live-dot"></i> A WORK IN PLAY</span>
+        <p>Made of curiosity. Best enjoyed with snacks.</p>
+        <span class="edition">SPECIAL EDITION / 2026</span>
+      </div>
+      <div class="setup">
+        <div class="television" id="television">
+          <div class="cabinet-top"><span>PALINASONIC</span><span>PERSONAL COLOR TELEVISION</span></div>
+          <div class="screen-bezel">
+            <div class="screen" id="screen">
+              <div class="screen-osd"><span id="channel-label">AV 1 <span class="osd-small">STEREO</span></span><span id="osd-right">DVD / PORTFOLIO</span></div>
+              <div class="screen-content" id="screen-content" tabindex="-1"></div>
+              <div class="scroll-hint" id="scroll-hint" aria-hidden="true">SCROLL INSIDE THE SCREEN ↓</div>
+              <div class="screen-shine" aria-hidden="true"></div>
+              <div class="scanlines" aria-hidden="true"></div>
+              <div class="channel-static" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="tv-controls">
+            <div class="tv-wordmark">palina<span>vision</span><small>GOOD IDEAS. ANALOG SOUL.</small></div>
+            <div class="speaker" aria-hidden="true"></div>
+            <div class="physical-controls">
+              <button class="hardware-button" id="motion-button" aria-pressed="false" title="Pause visual effects"><span aria-hidden="true">Ⅱ</span><small id="motion-label">MOTION</small></button>
+              <button class="hardware-button" id="sound-button" aria-pressed="false" title="Enable button sounds"><span id="sound-icon" aria-hidden="true">♪</span><small id="sound-label">SOUND OFF</small></button>
+              <button class="hardware-button" id="screensaver-button" title="Watch the bouncing DVD logo"><span aria-hidden="true">▱</span><small>DVD</small></button>
+              <button class="power-button" id="power-button" aria-label="Turn television off" aria-pressed="true"><span aria-hidden="true">⏻</span></button>
+              <i class="power-led" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="dvd-deck">
+          <span class="deck-brand">DVD <small>VIDEO</small></span>
+          <button class="disc-tray" id="eject-button" title="Eject disc and return to viewer selection"><span>PALINA_SKAKUN_VOL_01</span><b aria-hidden="true">⏏</b></button>
+          <div class="deck-display"><span id="deck-status">HELLO</span><small id="deck-time">00:00:00</small></div>
+          <div class="deck-ports" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="tv-feet" aria-hidden="true"><i></i><i></i></div>
+
+        <aside class="remote" aria-label="Portfolio remote control">
+          <div class="remote-top"><span>ps.</span><i></i></div>
+          <span class="remote-label">THE REMOTE</span>
+          <div class="remote-pad">
+            <button data-remote="previous" class="remote-up" aria-label="Previous channel">▲</button>
+            <button data-remote="back" class="remote-left" aria-label="Go back">◀</button>
+            <button data-remote="home" class="remote-ok" aria-label="Main menu">OK</button>
+            <button data-remote="next" class="remote-right" aria-label="Next channel">▶</button>
+            <button data-remote="next" class="remote-down" aria-label="Next channel">▼</button>
+          </div>
+          <button data-remote="menu" class="remote-menu">MENU</button>
+          <div class="remote-colors"><button data-route="about" aria-label="About Palina"></button><button data-route="artifacts" aria-label="Course artifacts"></button><button data-route="bonus" aria-label="Bonus projects"></button><button data-route="contact" aria-label="Contact Palina"></button></div>
+          <span class="remote-bottom">CURIOUS BY DESIGN</span>
+        </aside>
+        <div class="handwritten remote-note" aria-hidden="true">yes, it works <span>↗</span></div>
+        <div class="side-sticker" aria-hidden="true">be kind.<br />rewind.<span>✴</span></div>
+      </div>
+
+      <div class="below-tv">
+        <span><span aria-hidden="true">↳</span> SOFTWARE ENGINEER. AI/ML LEARNER. HUMAN.<button class="reading-toggle" data-reading-mode aria-pressed="false">Aa COMFY READING</button></span>
+        <button id="bounce-link">Waiting for the corner hit? <span>DVD screensaver ↗</span></button>
+      </div>
+      <div class="intro-strip">
+        <p>A portfolio worth <em>pressing play</em> on.</p>
+        <span>BUILT WITH INTENTION.<br />AND A LITTLE TOO MUCH NOSTALGIA.</span>
+        <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 4 46 26 65 13 54 33 77 40 54 46 65 67 46 54 40 77 33 54 13 67 26 46 4 40 26 33 13 13 33 26Z" fill="currentColor"/><circle cx="33" cy="36" r="2.5"/><circle cx="47" cy="36" r="2.5"/><path d="M31 45 Q40 55 49 45"/></svg>
+      </div>
+    </main>
+    <footer class="site-footer"><span>© 2026 PALINA SKAKUN</span><span>NO PASSWORD. JUST A PERSONALITY.</span><a href="https://github.com/palinaskakun/aiml500-portfolio-source" target="_blank" rel="noopener noreferrer">VIEW SOURCE ↗</a></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript><p class="noscript">This playful DVD menu needs JavaScript. You can still find me on <a href="https://github.com/palinaskakun">GitHub</a> or <a href="mailto:palinaskakun@gmail.com">email me</a>.</p></noscript>
+  </body>
+</html>

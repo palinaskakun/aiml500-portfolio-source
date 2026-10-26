@@ -1,0 +1,14 @@
+{
+  "name": "palina-home-video",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A nostalgic CRT and DVD portfolio for Palina Skakun.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check app.js && node --check scripts/serve.mjs && node --check scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
