@@ -76,3 +76,10 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Verified both power controls, paused power transitions, rapid off/on clicks, navigation interrupting shutdown, eject, reload defaults, and reading-view/screen-saver sizing in the browser. Pending shutdown callbacks cannot overwrite a newly selected chapter.
 - Fitted the decorative CD labels inside the disc and stacked it at narrower widths. Checked 390px and 1440px layouts for horizontal/page overflow. Main content keeps its 16px floor; the decorative CD recording label uses the requested smaller type.
 - Stylesheet parsing, syntax checks, all four existing animation tests, static build, and whitespace checks passed.
+
+## Reflection chapter and finishing changes — October 27, 2026
+
+- Palina requested a reflection draft and confirmed her work on idea generation, documentation, Mizou creation/testing, and limitations. The draft covers audience, learning, testing feedback, and next steps without invented reviewer comments.
+- Added the gold reflection chapter inside the TV with five exit links. Verified the entry appears only for Dr. Collins and other profiles cannot render the reflection route.
+- Made the title uppercase and upright, enlarged Photos Cleaner while preserving its full image, and shortened the README.
+- Verified navigation, profile visibility, title styling, photo dimensions, and 390px layout without horizontal overflow in the browser. Syntax, static build, stylesheet parsing, and whitespace checks passed.
