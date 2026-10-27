@@ -25,14 +25,14 @@ For Vercel, `vercel.json` sets the build command to `npm run build` and the outp
 ## The experience
 
 - **Viewer picker:** Dr. Collins, Recruiter, and Guest. This is a playful entrance, not authentication. Each profile changes the home introduction and primary call to action. Viewer preference is saved only in the current browser.
-- **Main menu:** Introduction, a graduation portrait, and routes into coursework and independent projects.
+- **Main menu:** A DVD title screen, a portrait in a DVD case with a turning disc, and chapter-selection links into coursework and independent projects.
 - **About me:** Bio, personal value proposition, experience, and tools based on supplied material.
 - **Coursework:** Boredom Buster AI (Workshop 1.4): live Base44 prototype, submitted report and team documentation PDFs, a prototype screenshot, process, tools, value proposition, limitations, credits, references, and the team’s AI-use disclosure.
 - **Projects:** TSIKAVA Coffee is featured first, followed by Vektor, Photos Cleaner, the independent adoption experience concept, and Catch the Banana. TSIKAVA includes the live Vercel prototype and its source repository.
 - **Contact:** Email, LinkedIn, GitHub, and a copy-email button.
 - **DVD screensaver:** Real wall reflections, color changes, a corner-hit counter, pause, and “manifest a corner” to aim the logo at a corner over four seconds. Escape returns to the prior chapter.
-- **Hardware:** Working remote navigation, eject, power/standby, optional synthesized button sounds, and a visual-effects toggle.
-- **Reading view:** Larger body text, a taller screen, ordinary page scrolling, and no scanlines. Available at the bottom of each content chapter. Reduced-motion system preferences are respected; sound is off by default.
+- **Hardware:** Working remote navigation, animated eject tray, synchronized TV/remote power buttons, CRT line-and-dot shutdown and tube warm-up, optional synthesized button sounds, and a visual-effects toggle.
+- **Reading view:** Larger body text, a taller screen, ordinary page scrolling, and no scanlines. Available at the bottom of each content chapter. Visual effects start enabled on each visit, as requested, and can be paused with the MOTION button. Sound is off by default.
 
 The default layout fits the TV, DVD deck, and remote inside the viewport beneath a slim header. On narrow screens, the remote becomes a horizontal control below the TV. Reading view remains available for expanded content.
 
@@ -50,7 +50,7 @@ Aeonik and Graebenbach Mono are bundled locally from the earlier portfolio. Ther
 
 `artifactView()` presents the supplied Boredom Buster AI deliverables as shared Team 1 work. The two original PDFs live in `assets/artifacts/` and are copied into `dist/` by the static build. The live prototype is linked at `https://beat-boredom-bot.base44.app/`. The implementation does not invent individual task ownership, model versions, training, or performance results.
 
-Workshop reflections belong in the Brightspace assignment text area according to the supplied course guidelines. They are not a public DVD chapter. See `docs/reflection-notes.md` for a writing scaffold.
+Palina will write her own reflection, which will be added to the website following Dr. Collins’s updated instructions. Do not generate a reflection for her. See `docs/reflection-notes.md` for the required topics and author notes; that internal document is excluded from the build.
 
 ## Source notes
 

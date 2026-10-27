@@ -65,3 +65,14 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Added the supplied screenshots and live links for Vektor, the independent humane society concept, and Catch the Banana; retained their GitHub links. Updated the banana entry to mention the browser version.
 - Verified all three live URLs open publicly in the browser. Verified all three local screenshot images load at their original proportions without cropping or rotation. Checked the narrow layout for horizontal overflow.
 - Syntax checks, stylesheet parsing, static build, source/build PDF comparison, and whitespace checks passed.
+
+
+## Assignment navigation and CRT / DVD presentation — October 27, 2026
+
+- Read the live Brightspace Professional Portfolio guidance, Assignment 1.6, its four-part 40-point rubric, and the submission instructions. Required reflection topics are audience customization, lessons learned, and feedback/revisions. Per Palina’s newer direction from Dr. Collins, the reflection will go on the website; Palina will write it. No reflection was generated.
+- Added all five routes to the header while retaining the five links inside the TV. Both menus navigate and show the current chapter.
+- Replaced the Hello World introduction with a DVD title menu, portrait DVD case, turning disc surface, and chapter-selection cards. Updated the bio with the supplied mom/classmates/dance stories and retained the calculus teaching-assistant correction.
+- Effects start enabled on every visit. Added CRT line-and-dot shutdown, tube warm-up, slow disc shimmer, moving scanlines, and a tray-eject animation. The motion control pauses effects. Sound remains off by default.
+- Verified both power controls, paused power transitions, rapid off/on clicks, navigation interrupting shutdown, eject, reload defaults, and reading-view/screen-saver sizing in the browser. Pending shutdown callbacks cannot overwrite a newly selected chapter.
+- Fitted the decorative CD labels inside the disc and stacked it at narrower widths. Checked 390px and 1440px layouts for horizontal/page overflow. Main content keeps its 16px floor; the decorative CD recording label uses the requested smaller type.
+- Stylesheet parsing, syntax checks, all four existing animation tests, static build, and whitespace checks passed.

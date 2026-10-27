@@ -5,13 +5,12 @@ const content = $('#screen-content');
 const screen = $('#screen');
 const routes = ['home', 'about', 'artifacts', 'bonus', 'contact'];
 const routeNames = { profiles: 'HELLO', home: 'MENU', about: 'ABOUT', artifacts: 'LAB 01', bonus: 'BONUS', contact: 'SAY HI', screensaver: 'DVD' };
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const storage = {
   get(key) { try { return localStorage.getItem(`phv-${key}`); } catch { return null; } },
   set(key, value) { try { localStorage.setItem(`phv-${key}`, value); } catch { /* Preferences are optional. */ } },
 };
 let audience = ['professor', 'recruiter', 'curious'].includes(storage.get('audience')) ? storage.get('audience') : 'curious';
-let motionPaused = storage.get('motion') === 'paused' || reducedMotion.matches;
+let motionPaused = false;
 let soundEnabled = false;
 let powered = true;
 let route = 'profiles';
@@ -20,6 +19,7 @@ let animationFrame = 0;
 let toastTimer;
 let transitionTimer;
 let celebrationTimer;
+let powerTransitionTimer;
 let audioContext;
 let saver;
 let readingMode = storage.get('reading') === 'true';
@@ -47,13 +47,13 @@ function profileView() {
 
 function homeView() {
   const path = audience === 'professor' ? 'artifacts' : audience === 'recruiter' ? 'bonus' : 'about';
-  const label = audience === 'professor' ? 'EXPLORE THE COURSEWORK' : audience === 'recruiter' ? 'SEE WHAT I BUILD' : 'ABOUT ME';
+  const label = audience === 'professor' ? 'PLAY ARTIFACT 01' : audience === 'recruiter' ? 'EXPLORE PROJECTS' : 'PLAY INTRO';
   const intro = audience === 'professor' ? 'My AIML-500 portfolio documents my coursework and progress in AI and machine learning.' : audience === 'recruiter' ? 'I build web, mobile, and backend applications, with experience in scientific computing and a growing focus on AI and machine learning.' : 'I’m a software engineer based in Dearborn, Michigan, studying AI and machine learning at Indiana Wesleyan University.';
-  return wrap('home', `<div class="home-grid"><div class="home-copy"><span class="eyebrow">PALINA SKAKUN / PORTFOLIO</span><h1 id="page-title">Hello, world.<br />I'm <em>Palina.</em></h1><p>${intro}</p><a class="screen-button" href="#${path}"><span aria-hidden="true">▶</span> ${label}</a></div><div class="portrait-composition"><span class="tape" aria-hidden="true"></span><div class="portrait-frame"><img src="./assets/palina.webp" alt="Palina smiling at her Michigan State graduation, beneath pink blossoms" width="400" height="400" /><span>Michigan State · 2025</span></div><div class="portrait-flower">${icons.flower}</div></div></div><div class="home-bottom"><a href="#artifacts"><span class="chapter-number">01</span><span>Coursework<small>AIML-500 • WORKSHOP 1</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="#bonus"><span class="chapter-number">02</span><span>Selected projects<small>WEB, MOBILE & EXPERIMENTS</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></a></div>`);
+  return wrap('home', `<div class="home-grid dvd-title-menu"><div class="home-copy"><span class="eyebrow">PALINASONIC PRESENTS / VOL. 01</span><h1 id="page-title">Now playing.<br /><em>Palina Skakun</em></h1><p>${intro}</p><a class="screen-button" href="#${path}"><span aria-hidden="true">▶</span> ${label}</a></div><div class="portrait-composition dvd-case-composition"><div class="portfolio-disc" aria-hidden="true"><span>DVD</span></div><div class="portrait-frame dvd-case"><div class="dvd-case-top"><span>DVD VIDEO</span></div><img src="./assets/palina.webp" alt="Palina smiling at her Michigan State graduation, beneath pink blossoms" width="400" height="400" /><div class="dvd-case-caption"><strong>PALINA SKAKUN</strong><span>THE PORTFOLIO · VOL. 01</span></div></div><div class="portrait-flower"></div></div></div><h2 class="chapter-selection-title">CHAPTER SELECTION</h2><div class="home-bottom"><a href="#artifacts"><span class="chapter-number">01</span><span>Coursework<small>AIML-500 • WORKSHOP 1</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a><a href="#bonus"><span class="chapter-number">02</span><span>Selected projects<small>WEB, MOBILE & EXPERIMENTS</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a></div>`);
 }
 
 function aboutView() {
-  return wrap('about', `<header class="page-heading"><span class="eyebrow">ABOUT / PALINA SKAKUN</span><h1 id="page-title">About me.</h1><p>Software engineering, education, and experience.</p></header><div class="bio-layout"><div class="body-copy"><p>I’m Palina Skakun, a software engineer based in Dearborn, Michigan. I graduated from Michigan State University’s Honors College with a B.S. in Computer Science in 2025, and I’m continuing my learning in AI and machine learning at Indiana Wesleyan University.</p><p>My mom, a software engineer, was my first inspiration. I chose computer science to prove to boys in my class that girls can do it too, then stayed to build things.</p><p>I’ve worked across web apps, mobile experiences, and scientific computing. Outside the CS career, I’ve been a resident assistant, a calculus learning assistant, and a dancer — including a Detroit Pistons halftime performance. Helping people understand and feel included is a thread through all of it.</p></div><div class="bio-photo"><img src="./assets/palina.webp" alt="Palina at her MSU graduation" width="300" height="300" loading="lazy" /><span>MSU, class of 2025 ♡</span></div></div><section class="value-statement"><h2>THE VALUE I BRING</h2><p>I help product teams turn complex ideas into approachable software. My experience across web, mobile, and scientific computing brings a practical engineering perspective to my growing AI/ML work, with a focus on usability, clear communication, and thoughtful implementation.</p></section><h2 class="section-title">EXPERIENCE</h2>${[
+  return wrap('about', `<header class="page-heading"><span class="eyebrow">ABOUT / PALINA SKAKUN</span><h1 id="page-title">Behind the scenes.</h1><p>Software engineer. AI/ML student. The backstory has a few extra scenes.</p></header><div class="bio-layout"><div class="body-copy"><p>I’m Palina Skakun, a software engineer in Dearborn, Michigan. I earned my B.S. in Computer Science from Michigan State University’s Honors College in 2025, and I’m now studying AI and machine learning at Indiana Wesleyan University.</p><p>My mom, a software engineer, was my first inspiration. I chose computer science partly to prove to the boys in my class that girls could do it too (the origin story includes a little spite). Then I stayed because I liked building things that people use.</p><p>I’ve worked on web apps, mobile experiences, and scientific computing. To stay busy and well rounded, I’ve been a resident assistant, a calculus teaching assistant, and a dancer—including a Detroit Pistons halftime performance. My goal is to be defined by more things than just my career and the work I do, in fact I want that to be the least interesting thing about me. </p></div><div class="bio-photo"><img src="./assets/palina.webp" alt="Palina at her MSU graduation" width="300" height="300" loading="lazy" /><span>MSU, class of 2025 ♡</span></div></div><section class="value-statement"><h2>THE VALUE I BRING</h2><p>I turn complicated ideas into software people actually use. My experience is across web and mobile apps, scientific computing, and teaching. That mix helps me build carefully and with intention. I’m bringing that approach now into AI and machine learning! </p></section><h2 class="section-title">EXPERIENCE</h2>${[
     ['Software Developer · Lightning Workgroup', 'SEP 2025 — JAN 2026', 'Shipped full-stack features with C#/.NET, Vue.js, and PostgreSQL, working through peer review, testing, and deployments with a remote team.'],
     ['Computational Chemistry Intern · ATTMOS', 'MAY — SEP 2025', 'Containerized GPU-accelerated chemistry tools and built wrappers to make scientific workflows more portable and reproducible.'],
     ['iOS Application Developer · Launch / NTT Data', 'JAN — MAY 2025', 'Contributed to a wearable AI assistant with a Swift iOS app, a Flask API, YOLOv8 object detection, and Azure speech services for a capstone team.'],
@@ -157,7 +157,7 @@ function bonusView() {
 }
 
 function contactView() {
-  return wrap('contact', `<header class="page-heading"><span class="eyebrow">CONTACT</span><h1 id="page-title">Get in touch.</h1><p>For project opportunities, collaboration, or questions about my work.</p></header><div class="contact-layout"><div class="contact-links"><a href="mailto:palinaskakun@gmail.com"><span>Email</span><small>↗</small></a><a href="https://www.linkedin.com/in/palinaskakun" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><small>↗</small></a><a href="https://github.com/palinaskakun" target="_blank" rel="noopener noreferrer"><span>GitHub</span><small>↗</small></a><button class="copy-email" data-copy-email>palinaskakun@gmail.com <span>COPY</span></button></div><div class="contact-disc" aria-hidden="true"><span>Palina Skakun</span><small>PALINA SKAKUN / VOL. 01</small></div></div><div class="contact-footer">Based in Dearborn, Michigan. Building on a background in software engineering and continuing my learning in AI and machine learning.<br /><a href="#profiles">Return to profiles</a>.</div>`);
+  return wrap('contact', `<header class="page-heading"><span class="eyebrow">CONTACT</span><h1 id="page-title">Get in touch.</h1><p>For project opportunities, collaboration, or a good technical rabbit hole.</p></header><div class="contact-layout"><div class="contact-links"><a href="mailto:palinaskakun@gmail.com"><span>Email</span><small>↗</small></a><a href="https://www.linkedin.com/in/palinaskakun" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><small>↗</small></a><a href="https://github.com/palinaskakun" target="_blank" rel="noopener noreferrer"><span>GitHub</span><small>↗</small></a><button class="copy-email" data-copy-email>palinaskakun@gmail.com <span>COPY</span></button></div><div class="contact-disc" aria-hidden="true"><span>Palina Skakun</span><small>PORTFOLIO / VOL. 01</small></div></div><div class="contact-footer">Based in Dearborn, Michigan. Building on a background in software engineering and continuing my learning in AI and machine learning.<br /><a href="#profiles">Return to profiles</a>.</div>`);
 }
 
 function saverView() {
@@ -201,8 +201,12 @@ function updateMotion() {
 
 function setMotion(paused) {
   motionPaused = paused;
-  storage.set('motion', paused ? 'paused' : 'playing');
   updateMotion();
+  if (paused && powerTransitionTimer) {
+    if (powered) resetPowerTransition();
+    else finishPowerOff();
+  }
+  if (paused) $('#eject-button').getAnimations().forEach(animation => animation.cancel());
 }
 
 function navigate(target) {
@@ -223,9 +227,14 @@ function updateScrollHint() {
 }
 
 function render(target, focus = true) {
+  resetPowerTransition();
   const valid = [...routes, 'profiles', 'screensaver'].includes(target) ? target : 'profiles';
   if (valid !== 'screensaver') previousRoute = valid;
   route = valid;
+  document.querySelectorAll('.header-nav a').forEach(link => {
+    if (link.hash === `#${valid}`) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
   document.body.classList.toggle('screensaver-active', valid === 'screensaver');
   document.body.classList.toggle('reading-mode', readingMode);
   stopSaver();
@@ -242,7 +251,7 @@ function render(target, focus = true) {
   if (!motionPaused && focus) {
     clearTimeout(transitionTimer);
     screen.classList.remove('channel-changing');
-    requestAnimationFrame(() => screen.classList.add('channel-changing'));
+    requestAnimationFrame(() => { if (powered && !motionPaused) screen.classList.add('channel-changing'); });
     transitionTimer = setTimeout(() => screen.classList.remove('channel-changing'), 250);
   }
   if (focus) content.focus({ preventScroll: true });
@@ -261,16 +270,45 @@ function updatePowerControls() {
   }
 }
 
-function setPower(on) {
-  powered = on;
-  if (on) { render(route); return; }
-  stopSaver();
+function resetPowerTransition() {
+  clearTimeout(powerTransitionTimer);
+  powerTransitionTimer = undefined;
+  $('#television').classList.remove('powering-off', 'powering-on');
+  content.inert = false;
+}
+
+function warmUpScreen() {
+  if (motionPaused) return;
+  $('#television').classList.add('powering-on');
+  powerTransitionTimer = setTimeout(resetPowerTransition, 780);
+}
+
+function finishPowerOff() {
+  resetPowerTransition();
+  if (powered) return;
   $('#television').classList.add('powered-off');
+  content.innerHTML = '<section class="power-view"><p>STANDBY</p><button class="screen-button" data-power-on>⏻ TURN IT BACK ON</button></section>';
+  content.focus({ preventScroll: true });
+}
+
+function setPower(on) {
+  resetPowerTransition();
+  powered = on;
+  if (on) {
+    render(route);
+    warmUpScreen();
+    return;
+  }
+  stopSaver();
+  clearTimeout(transitionTimer);
+  screen.classList.remove('channel-changing');
   updatePowerControls();
   $('#deck-status').textContent = 'STANDBY';
   $('#scroll-hint').classList.remove('visible');
-  content.innerHTML = '<section class="power-view"><p>STANDBY</p><button class="screen-button" data-power-on>⏻ TURN IT BACK ON</button></section>';
-  content.focus({ preventScroll: true });
+  if (motionPaused) { finishPowerOff(); return; }
+  content.inert = true;
+  $('#television').classList.add('powering-off');
+  powerTransitionTimer = setTimeout(finishPowerOff, 780);
 }
 
 function stopSaver() {
@@ -390,7 +428,15 @@ for (const selector of ['#power-button', '#remote-power-button']) {
 }
 $('#screensaver-button').addEventListener('click', () => navigate(route === 'screensaver' ? previousRoute : 'screensaver'));
 $('#bounce-link').addEventListener('click', () => navigate('screensaver'));
-$('#eject-button').addEventListener('click', () => { navigate('profiles'); showToast('Disc ejected.'); });
+$('#eject-button').addEventListener('click', () => {
+  navigate('profiles');
+  if (!motionPaused) $('#eject-button').animate([
+    { transform: 'translateY(0)' },
+    { transform: 'translateY(7px) scaleX(1.015)', offset: .45 },
+    { transform: 'translateY(0)' },
+  ], { duration: 600, easing: 'ease-in-out' });
+  showToast('Disc ejected.');
+});
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && route === 'screensaver') navigate(previousRoute);
@@ -399,7 +445,6 @@ document.addEventListener('keydown', (event) => {
 window.addEventListener('hashchange', () => render(location.hash.slice(1)));
 content.addEventListener('scroll', updateScrollHint, { passive: true });
 new ResizeObserver(updateScrollHint).observe(content);
-reducedMotion.addEventListener('change', (event) => { if (event.matches) setMotion(true); });
 const startTime = Date.now();
 setInterval(() => {
   const elapsed = Math.floor((Date.now() - startTime) / 1000);
@@ -407,3 +452,4 @@ setInterval(() => {
 }, 1000);
 
 render(location.hash.slice(1) || 'profiles', false);
+warmUpScreen();
