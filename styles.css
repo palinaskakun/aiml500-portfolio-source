@@ -3253,3 +3253,194 @@ body.reading-mode {
     padding: 5px 8px;
   }
 }
+
+/* Completed course artifact and featured coffee prototype. */
+.artifacts-view .page-heading,
+.bonus-view .page-heading {
+  margin-bottom: 22px;
+}
+
+.artifacts-view .page-heading h1,
+.bonus-view .page-heading h1 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.artifacts-view .page-heading > p,
+.bonus-view .page-heading > p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.artifacts-view .menu-nav,
+.bonus-view .menu-nav {
+  margin-bottom: 22px;
+}
+
+.artifact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.artifact-actions .screen-button {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.artifact-published {
+  color: #d0e5b9;
+  border-color: #98ae7e80;
+}
+
+.artifact-process {
+  padding-left: 24px;
+}
+
+.artifact-process li {
+  margin: 0 0 15px;
+  padding-left: 5px;
+}
+
+.artifact-tools {
+  margin: 0 0 24px;
+}
+
+.artifact-tools > div {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #b195c433;
+}
+
+.artifact-tools dt {
+  color: #e8d8f2;
+  font-family: var(--serif);
+  font-size: 20px;
+}
+
+.artifact-tools dd {
+  margin: 0;
+}
+
+.artifact-screenshot {
+  margin: 0 0 26px;
+}
+
+.artifact-screenshot a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #b89ccc70;
+  border-radius: 6px;
+  background: #f7f4f1;
+}
+
+.artifact-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.artifact-screenshot figcaption {
+  margin-top: 12px;
+  font: 12px/1.7 var(--mono);
+  color: #bfa8cb;
+}
+
+.team-credits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 24px;
+  padding-left: 20px;
+  margin-bottom: 26px;
+}
+
+.text-link {
+  color: #dfc6ee;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.project-featured {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: start;
+  border: 1px solid #bfa4cd66;
+  border-radius: 8px;
+  background: #b99dcc0a;
+  padding: 25px;
+}
+
+.project-featured .project-visual {
+  width: 100%;
+  height: 310px;
+  transform: none;
+  border-color: #dfd1ba;
+  border-radius: 3px;
+}
+
+.project-featured .project-visual img {
+  object-position: center;
+}
+
+.project-featured .eyebrow {
+  display: block;
+  margin-top: 14px;
+  color: #c8b29a;
+}
+
+.featured-label {
+  display: inline-block;
+  color: #e3ccaa;
+  border-bottom: 1px solid #ac896d80;
+  padding-bottom: 6px;
+  font: 11px/1.6 var(--mono);
+  letter-spacing: 1px;
+}
+
+.project-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+  padding-left: 17px;
+  margin: 20px 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #d5c0df;
+}
+
+@media (max-width: 900px) {
+  .project-featured {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+  .project-featured .project-visual {
+    height: 220px;
+  }
+}
+
+@media (max-width: 650px) {
+  .artifact-tools > div {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+  .team-credits {
+    grid-template-columns: 1fr;
+  }
+  .artifact-actions .screen-button {
+    width: 100%;
+    font-size: 11px;
+  }
+  .project-featured {
+    padding: 18px;
+  }
+  .project-featured .project-visual {
+    height: 170px;
+  }
+  .project-features {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}

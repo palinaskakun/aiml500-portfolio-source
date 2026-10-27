@@ -1,6 +1,6 @@
 # Workshop 1 reflection — private submission scaffold
 
-This is a planning aid, not a completed personal reflection. It is excluded from `dist/`. The team chatbot is still in progress. Finish the lab and write from the actual experience before submitting this text in Brightspace.
+This is a planning aid, not a completed personal reflection. It is excluded from `dist/`. The Boredom Buster AI prototype, project report, and team documentation are now included in the portfolio. Personalize the reflection with your own contribution and actual feedback before submitting it in Brightspace.
 
 ## Creative framing: the director's commentary
 
@@ -29,4 +29,6 @@ Use the DVD theme in the writing without losing the reflection's substance. Thre
 
 ## Before submission
 
-The coursework chapter needs a tangible completed deliverable and accurate evidence. Replace all placeholders and confirm the professor can open the final hosted URL without a developer environment or account restriction. No hosting has been selected yet, so the local preview is not a submission link.
+The coursework chapter now includes the live Base44 prototype, a screenshot, and both supplied PDFs. Confirm Dr. Collins can open the final Vercel URL, the chatbot, and the PDF evidence without a developer environment or an account restriction. Submit the portfolio URL and your personal reflection in the required Brightspace text area.
+
+The documentation records the initial prototype-sharing obstacle, a Mizou instruction-length constraint, and conversations that refine broad ideas into more specific activities. These are factual prompts for reflection; explain what you personally learned rather than claiming an individual contribution or feedback that the team notes do not establish.

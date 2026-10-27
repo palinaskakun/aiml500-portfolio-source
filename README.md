@@ -27,8 +27,8 @@ For Vercel, `vercel.json` sets the build command to `npm run build` and the outp
 - **Viewer picker:** Dr. Collins, Recruiter, and Guest. This is a playful entrance, not authentication. Each profile changes the home introduction and primary call to action. Viewer preference is saved only in the current browser.
 - **Main menu:** Introduction, a graduation portrait, and routes into coursework and independent projects.
 - **About me:** Bio, personal value proposition, experience, and tools based on supplied material.
-- **Coursework:** AI Lab team chatbot placeholder, with all required artifact sections. No completed chatbot, evaluation, or contribution is claimed.
-- **Bonus:** Vektor, Photos Cleaner, the independent adoption experience concept, and Catch the Banana. Repository links point to actual public projects.
+- **Coursework:** Boredom Buster AI (Workshop 1.4): live Base44 prototype, submitted report and team documentation PDFs, a prototype screenshot, process, tools, value proposition, limitations, credits, references, and the team’s AI-use disclosure.
+- **Projects:** TSIKAVA Coffee is featured first, followed by Vektor, Photos Cleaner, the independent adoption experience concept, and Catch the Banana. Repository links point to actual public projects.
 - **Contact:** Email, LinkedIn, GitHub, and a copy-email button.
 - **DVD screensaver:** Real wall reflections, color changes, a corner-hit counter, pause, and “manifest a corner” to aim the logo at a corner over four seconds. Escape returns to the prior chapter.
 - **Hardware:** Working remote navigation, eject, power/standby, optional synthesized button sounds, and a visual-effects toggle.
@@ -42,22 +42,23 @@ There are no external fonts, analytics, accounts, backend services, or runtime d
 
 - `app.js`: content, viewer routing, controls, project data, and the course artifact template.
 - `styles.css`: TV cabinet, screen, responsive styles, and reading view.
-- `assets/`: optimized local photos and favicon.
+- `assets/`: local photos, project artwork, prototype evidence, original artifact PDFs, and favicon.
 - `lib/bounce.js`: reflection math, exercised by `tests/bounce.test.mjs`.
 - `docs/`: planning and reflection notes; these are **excluded from the static build**.
 
-### Finishing Artifact 1
+### Artifact 1
 
-Replace the placeholder in `artifactView()` only after the team finishes. Add the real chatbot or shareable deliverable, screenshots, sample conversations, the lab objective, process, tools/model details, my specific contribution, teammate credits, evidence-based value proposition, and references. Remove the placeholder status when its evidence is complete.
+`artifactView()` presents the supplied Boredom Buster AI deliverables as shared Team 1 work. The two original PDFs live in `assets/artifacts/` and are copied into `dist/` by the static build. The live prototype is linked at `https://beat-boredom-bot.base44.app/`. The implementation does not invent individual task ownership, model versions, training, or performance results.
 
 Workshop reflections belong in the Brightspace assignment text area according to the supplied course guidelines. They are not a public DVD chapter. See `docs/reflection-notes.md` for a writing scaffold.
 
 ## Source notes
 
-Bio and experience were drafted from the user-supplied résumé and the prior portfolio in `/Users/palina/CS/palina`. Local photos come from that prior portfolio. The current résumé takes precedence over older descriptions. Job-seeking status and older project outcome percentages were not carried over automatically.
+Bio and experience were drafted from the user-supplied résumé and the prior portfolio in `/Users/palina/CS/palina`. Local photos come from that prior portfolio. The current résumé takes precedence over older descriptions. The user’s October 27 update sets the current location to Dearborn, Michigan. Job-seeking status and older project outcome percentages were not carried over automatically.
 
-Project descriptions were checked against the public repository metadata and READMEs on October 25, 2026:
+Project descriptions were initially checked against public repository metadata and READMEs on October 25, 2026. TSIKAVA’s actual pages, feature code, and asset-license notes were reviewed on October 27, 2026:
 
+- [TSIKAVA Coffee](https://github.com/palinaskakun/tsikava-coffee): Belarusian-inspired coffee-shop prototype with drink customization, accounts, cart, order history, Supabase, and a Stripe sandbox checkout. Its project artwork comes from the existing repository, whose asset notes identify product imagery as generated for the fictional concept.
 - [Vektor](https://github.com/palinaskakun/vektor-ai): career navigation prototype; keyword analyzer and seeded data, with future server-side AI integration clearly distinguished.
 - [Photos Cleaner](https://github.com/palinaskakun/photos-cleaner): Swift photo management project.
 - [Adoption experience concept](https://github.com/palinaskakun/humane-society-reimagined): independent redesign; no affiliation is implied.

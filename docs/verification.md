@@ -36,3 +36,15 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Verified no page overflow and a fully visible remote at 1309×818, 1163×654, 372×895, and 354×672 browser viewports. The profile chooser fits inside the screen at these sizes.
 - On phones, the remote is displayed horizontally below the DVD deck.
 - Verified the footer screensaver control and return action after moving the controls into the compact footer.
+
+## October 27 — completed artifact and featured coffee project
+
+- Updated current location to Dearborn, Michigan in the bio, home introduction, and contact section.
+- Featured TSIKAVA Coffee first, using its public feature code and existing artwork; retained its prototype and sandbox-checkout status.
+- Replaced the AI Lab placeholder with Boredom Buster AI using both supplied PDFs. Artifact sections cover title, introduction, description, objective, process, tools, unique value, audience relevance, evidence, team credits, references, and AI-use disclosure.
+- Used the submitted report’s Base44 URL as the primary deliverable; did not carry over the documentation’s inconsistent Chatbase label as an implementation claim.
+- Captured the accessible published homepage. Example-conversation claims come from the documentation, page 5; no controlled benchmark or successful live chat test is claimed.
+- Original PDF evidence is published in assets/artifacts; private reflection notes remain excluded from the site build.
+
+- Final browser pass confirmed the first project is TSIKAVA, the bio uses Dearborn, all seven artifact sections are present, and all eight team members are credited. No page or TV-content horizontal overflow in the phone check; no browser console errors.
+- Both PDF routes return HTTP 200 with application/pdf, and both published files match the original attachments byte for byte.
