@@ -375,7 +375,7 @@ $('#sound-button').addEventListener('click', () => {
   soundEnabled = !soundEnabled;
   $('#sound-button').setAttribute('aria-pressed', String(soundEnabled));
   $('#sound-button').title = soundEnabled ? 'Disable button sounds' : 'Enable button sounds';
-  $('#sound-label').textContent = soundEnabled ? 'SOUND ON' : 'SOUND OFF';
+  $('#sound-label').textContent = 'SOUND';
   if (soundEnabled) playClick();
 });
 $('#power-button').addEventListener('click', () => setPower(!powered));

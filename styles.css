@@ -11,6 +11,7 @@
   --mono: 'Courier New',monospace;
   --serif: Georgia,'Times New Roman',serif;
   --sans: Arial,Helvetica,sans-serif;
+  --min-content-size: 16px;
 }
 
 * {
@@ -89,14 +90,14 @@ svg {
   align-items: center;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: var(--min-content-size);
   letter-spacing: .5px;
   line-height: 1.5;
   white-space: nowrap;
 }
 
 .brand b {
-  font-size: 15px;
+  font-size: var(--min-content-size);
   letter-spacing: 1.4px;
 }
 
@@ -116,9 +117,9 @@ svg {
 }
 
 .header-edition {
-  font: 10px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   display: block;
   white-space: nowrap;
 }
@@ -129,7 +130,7 @@ svg {
 }
 
 .header-link {
-  font-size: 14px;
+  font-size: var(--min-content-size);
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -155,9 +156,9 @@ svg {
   align-items: center;
   justify-content: space-between;
   padding: 26px 0;
-  font: 9px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1.2px;
-  font-size: 12px;
+  font-size: var(--min-content-size);
   gap: 24px;
 }
 
@@ -213,9 +214,9 @@ svg {
   justify-content: space-between;
   padding: 0 10px 6px;
   color: #c1bfc5;
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
-  font-size: 8px;
+  font-size: var(--min-content-size);
   min-height: 0;
   line-height: 12px;
 }
@@ -283,21 +284,21 @@ svg {
   display: flex;
   justify-content: space-between;
   color: #c1d8a9;
-  font: bold 12px var(--mono);
+  font: bold var(--min-content-size) var(--mono);
   letter-spacing: 1px;
   text-shadow: 0 0 6px #bad0b05c;
   pointer-events: none;
-  font-size: 15px;
+  font-size: var(--min-content-size);
 }
 
 .osd-small {
-  font-size: 11px;
+  font-size: var(--min-content-size);
   font-weight: normal;
   margin-left: 12px;
 }
 
 .screen-osd>span:last-child {
-  font-size: 11px;
+  font-size: var(--min-content-size);
   color: #b9abbf;
   font-weight: normal;
   letter-spacing: 1.4px;
@@ -353,10 +354,10 @@ svg {
 
 .tv-wordmark small {
   display: block;
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
   margin-top: 5px;
-  font-size: 8px;
+  font-size: var(--min-content-size);
   color: #b0adb5;
 }
 
@@ -395,18 +396,18 @@ svg {
   border-radius: 16px;
   background: linear-gradient(#77767c, #525157);
   box-shadow: inset 0 1px 1px #a19aa680, 0 1px 1px #222128;
-  font: 12px var(--mono);
+  font: var(--min-content-size) var(--mono);
   font-size: 22px;
   color: #eee6f6;
 }
 
 .hardware-button small {
   display: block;
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .2px;
   padding-top: 6px;
   white-space: nowrap;
-  font-size: 9px;
+  font-size: var(--min-content-size);
 }
 
 .hardware-button:hover>span {
@@ -461,12 +462,12 @@ svg {
 }
 
 .deck-brand small {
-  font: 7px var(--sans);
+  font: var(--min-content-size) var(--sans);
   letter-spacing: 3px;
   display: block;
   text-align: center;
   margin-top: 6px;
-  font-size: 8px;
+  font-size: var(--min-content-size);
 }
 
 .disc-tray {
@@ -484,10 +485,10 @@ svg {
 }
 
 .disc-tray span {
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .5px;
   color: #d8cede;
-  font-size: 10px;
+  font-size: var(--min-content-size);
 }
 
 .disc-tray b {
@@ -512,15 +513,15 @@ svg {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  font: 9px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #c4d6af;
   text-shadow: 0 0 5px #bad0b04d;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   border-color: #807286;
 }
 
 .deck-display small {
-  font-size: 9px;
+  font-size: var(--min-content-size);
   color: #98b18f;
 }
 
@@ -611,11 +612,11 @@ svg {
 }
 
 .remote-label {
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
   margin: 13px 0 9px;
   color: #55455f;
-  font-size: 9px;
+  font-size: var(--min-content-size);
 }
 
 .remote-pad {
@@ -633,11 +634,11 @@ svg {
   border: 0;
   background: none;
   color: #e8dff1;
-  font: 9px var(--mono);
+  font: var(--min-content-size) var(--mono);
   width: 40px;
   height: 40px;
   padding: 0;
-  font-size: 14px;
+  font-size: var(--min-content-size);
 }
 
 .remote-pad button:hover {
@@ -673,7 +674,7 @@ svg {
   height: 40px;
   color: #5a476b;
   box-shadow: 0 2px 2px #6c567c66;
-  font-size: 12px;
+  font-size: var(--min-content-size);
 }
 
 .remote-menu {
@@ -681,11 +682,11 @@ svg {
   border: 1px solid #8c759f;
   box-shadow: 0 1px 1px #7761864d;
   border-radius: 16px;
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   padding: 9px 22px;
   margin: 10px 0 6px;
   min-height: 44px;
-  font-size: 11px;
+  font-size: var(--min-content-size);
 }
 
 .remote-colors {
@@ -719,11 +720,11 @@ svg {
 }
 
 .remote-bottom {
-  font: 4px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
   margin-top: auto;
   color: #5b4769;
-  font-size: 8px;
+  font-size: var(--min-content-size);
 }
 
 .handwritten {
@@ -736,7 +737,7 @@ svg {
   right: -13px;
   top: 564px;
   transform: rotate(-5deg);
-  font-size: 15px;
+  font-size: var(--min-content-size);
 }
 
 .remote-note span {
@@ -776,11 +777,11 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .7px;
   color: #817586;
   gap: 22px;
-  font-size: 12px;
+  font-size: var(--min-content-size);
   line-height: 1.6;
 }
 
@@ -800,11 +801,11 @@ svg {
 }
 
 .below-tv button>span {
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   margin-left: 5px;
   text-decoration: underline;
   text-underline-offset: 4px;
-  font-size: 12px;
+  font-size: var(--min-content-size);
   display: block;
   margin: 5px 0 0;
 }
@@ -834,11 +835,11 @@ svg {
 }
 
 .intro-strip>span {
-  font: 7px/1.8 var(--mono);
+  font: var(--min-content-size)/1.8 var(--mono);
   letter-spacing: 1.1px;
   margin-left: auto;
   margin-right: 30px;
-  font-size: 11px;
+  font-size: var(--min-content-size);
 }
 
 .intro-strip svg {
@@ -907,13 +908,13 @@ svg {
   padding: 14px 22px;
   box-shadow: 0 8px 30px #1b142d22;
   border-radius: 6px;
-  font: 12px var(--mono);
+  font: var(--min-content-size) var(--mono);
   z-index: 100;
   max-width: 90vw;
   text-align: center;
   transition: .2s;
   pointer-events: none;
-  font-size: 15px;
+  font-size: var(--min-content-size);
   line-height: 1.6;
 }
 
@@ -941,11 +942,11 @@ svg {
 }
 
 .eyebrow {
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1.4px;
   color: #c1adc9;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: var(--min-content-size);
 }
 
 .profile-view>.eyebrow {
@@ -1024,18 +1025,18 @@ svg {
 }
 
 .profile-name {
-  font: 13px var(--serif);
+  font: var(--min-content-size) var(--serif);
   margin-top: 14px;
   font-size: 23px;
 }
 
 .profile-caption {
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
   color: #d1beda;
   margin-top: 8px;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: var(--min-content-size);
 }
 
 .profile-arrow {
@@ -1049,7 +1050,7 @@ svg {
   place-items: center;
   width: 34px;
   height: 34px;
-  font: 15px var(--sans);
+  font: var(--min-content-size) var(--sans);
   opacity: 0;
   transition: .18s;
   font-size: 21px;
@@ -1060,14 +1061,14 @@ svg {
 }
 
 .skip-profile {
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #bdacc6;
   border: 0;
   border-bottom: 1px solid #82718c;
   background: none;
   margin-top: 22px;
   padding: 8px 4px;
-  font-size: 14px;
+  font-size: var(--min-content-size);
   min-height: 44px;
 }
 
@@ -1076,7 +1077,7 @@ svg {
 }
 
 .profile-bottom {
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 2.5px;
   color: #907f9a;
   margin: 23px 0 0;
@@ -1085,7 +1086,7 @@ svg {
 .mini-star {
   position: absolute;
   color: #b9a3cd;
-  font-size: 13px;
+  font-size: var(--min-content-size);
   left: 13%;
   top: 35%;
 }
@@ -1115,11 +1116,11 @@ svg {
 }
 
 .menu-nav a {
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .3px;
   color: #b5a2c2;
   white-space: nowrap;
-  font-size: 13px;
+  font-size: var(--min-content-size);
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -1127,7 +1128,7 @@ svg {
 }
 
 .menu-nav a span {
-  font-size: 11px;
+  font-size: var(--min-content-size);
   color: #c0a8cc;
   padding-right: 7px;
 }
@@ -1148,11 +1149,11 @@ svg {
 
 .viewer-badge {
   margin-left: auto;
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #c0d1a5;
   letter-spacing: .6px;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   min-height: 44px;
 }
 
@@ -1178,7 +1179,7 @@ svg {
 }
 
 .home-copy>p {
-  font: 11px/1.8 var(--sans);
+  font: var(--min-content-size)/1.8 var(--sans);
   max-width: 510px;
   color: #e0d3e6;
   margin: 0 0 19px;
@@ -1192,7 +1193,7 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .3px;
   border: 1px solid #b1a0c4;
   border-radius: 3px;
@@ -1201,7 +1202,7 @@ svg {
   background: #c6b0dc;
   box-shadow: 0 2px 0 #776185;
   transition: .15s;
-  font-size: 14px;
+  font-size: var(--min-content-size);
   min-height: 50px;
 }
 
@@ -1240,7 +1241,7 @@ svg {
 }
 
 .portrait-frame>span {
-  font: italic 12px var(--serif);
+  font: italic var(--min-content-size) var(--serif);
   position: absolute;
   bottom: 13px;
   left: 22px;
@@ -1273,7 +1274,7 @@ svg {
 }
 
 .portrait-note {
-  font: italic 13px var(--serif);
+  font: italic var(--min-content-size) var(--serif);
   color: #baabc9;
   transform: rotate(-9deg);
   position: absolute;
@@ -1292,7 +1293,7 @@ svg {
 }
 
 .home-bottom a {
-  font: 11px var(--serif);
+  font: var(--min-content-size) var(--serif);
   display: flex;
   gap: 15px;
   align-items: center;
@@ -1308,18 +1309,18 @@ svg {
 
 .home-bottom small {
   display: block;
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
   color: #aa95b5;
   margin: 5px 0 0;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   line-height: 1.7;
   margin-top: 8px;
 }
 
 .home-bottom .chapter-arrow {
   margin-left: auto;
-  font: 15px var(--sans);
+  font: var(--min-content-size) var(--sans);
   color: #b9a2cc;
   font-size: 24px;
 }
@@ -1341,7 +1342,7 @@ svg {
 }
 
 .page-heading>p {
-  font: 11px/1.75 var(--sans);
+  font: var(--min-content-size)/1.75 var(--sans);
   color: #e0d3e6;
   max-width: 760px;
   margin: 0;
@@ -1356,7 +1357,7 @@ svg {
 }
 
 .body-copy {
-  font: 11px/1.85 var(--sans);
+  font: var(--min-content-size)/1.85 var(--sans);
   color: #e0d3e6;
   font-size: 18px;
   line-height: 1.85;
@@ -1393,9 +1394,9 @@ svg {
   position: absolute;
   bottom: 10px;
   left: 12px;
-  font: italic 10px var(--serif);
+  font: italic var(--min-content-size) var(--serif);
   color: #6e6176;
-  font-size: 14px;
+  font-size: var(--min-content-size);
 }
 
 .value-statement {
@@ -1406,11 +1407,11 @@ svg {
 }
 
 .value-statement h2 {
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1.6px;
   color: #baa2cc;
   margin: 0 0 10px;
-  font-size: 12px;
+  font-size: var(--min-content-size);
   margin-bottom: 15px;
 }
 
@@ -1423,11 +1424,11 @@ svg {
 }
 
 .section-title {
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1.4px;
   color: #c5b3cf;
   margin: 34px 0 20px;
-  font-size: 13px;
+  font-size: var(--min-content-size);
 }
 
 .experience-row {
@@ -1439,7 +1440,7 @@ svg {
 }
 
 .experience-row h3 {
-  font: 12px var(--serif);
+  font: var(--min-content-size) var(--serif);
   font-weight: normal;
   color: #e9dfec;
   margin: 0;
@@ -1447,14 +1448,14 @@ svg {
 }
 
 .experience-row .date {
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #aa96b4;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   align-self: center;
 }
 
 .experience-row p {
-  font: 10px/1.7 var(--sans);
+  font: var(--min-content-size)/1.7 var(--sans);
   color: #d6c5e0;
   margin: 5px 0 0;
   grid-column: 1/-1;
@@ -1472,17 +1473,17 @@ svg {
   border: 1px solid #95809e60;
   padding: 8px 10px;
   border-radius: 2px;
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .3px;
   color: #c8b7d3;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   line-height: 1.5;
 }
 
 .inline-tag {
   color: #d8c59d;
   border-color: #99876560;
-  font-size: 6px;
+  font-size: var(--min-content-size);
   line-height: 1.3;
 }
 
@@ -1511,9 +1512,9 @@ svg {
 }
 
 .artifact-cover small {
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
-  font-size: 9px;
+  font-size: var(--min-content-size);
   line-height: 1.6;
 }
 
@@ -1531,11 +1532,11 @@ svg {
 }
 
 .artifact-cover>span {
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   border-top: 1px solid #77618a;
   padding-top: 11px;
   letter-spacing: .8px;
-  font-size: 9px;
+  font-size: var(--min-content-size);
   line-height: 1.5;
 }
 
@@ -1548,7 +1549,7 @@ svg {
 }
 
 .artifact-summary>p {
-  font: 10px/1.8 var(--sans);
+  font: var(--min-content-size)/1.8 var(--sans);
   color: #e0d3e6;
   margin: 0 0 15px;
   font-size: 17px;
@@ -1557,10 +1558,10 @@ svg {
 }
 
 .artifact-meta {
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .5px;
   color: #ad97b8;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   line-height: 1.7;
 }
 
@@ -1568,7 +1569,7 @@ svg {
   border: 1px dashed #a58d636b;
   background: #d3bc8508;
   padding: 18px 20px;
-  font: 9px/1.7 var(--sans);
+  font: var(--min-content-size)/1.7 var(--sans);
   color: #d1bf9c;
   margin: 26px 0;
   font-size: 16px;
@@ -1591,7 +1592,7 @@ svg {
 .artifact-details summary {
   list-style: none;
   cursor: pointer;
-  font: 11px var(--serif);
+  font: var(--min-content-size) var(--serif);
   padding: 18px 0;
   color: #dfcfe6;
   display: flex;
@@ -1608,7 +1609,7 @@ svg {
 
 .artifact-details summary:after {
   content: '+';
-  font: 14px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #ad92be;
   font-size: 25px;
 }
@@ -1618,7 +1619,7 @@ svg {
 }
 
 .artifact-details details>div {
-  font: 10px/1.8 var(--sans);
+  font: var(--min-content-size)/1.8 var(--sans);
   color: #d6c5e0;
   padding: 0 0 16px;
   max-width: 840px;
@@ -1628,12 +1629,12 @@ svg {
 }
 
 .artifact-details h3 {
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .7px;
   text-transform: uppercase;
   color: #bda2cf;
   margin: 20px 0 10px;
-  font-size: 12px;
+  font-size: var(--min-content-size);
 }
 
 .artifact-details ul {
@@ -1666,11 +1667,11 @@ svg {
 }
 
 .coming-slots span {
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .8px;
   display: block;
   margin-top: 7px;
-  font-size: 10px;
+  font-size: var(--min-content-size);
   line-height: 1.6;
 }
 
@@ -1728,7 +1729,7 @@ svg {
 }
 
 .project p {
-  font: 10px/1.8 var(--sans);
+  font: var(--min-content-size)/1.8 var(--sans);
   color: #e0d3e6;
   margin: 0 0 10px;
   font-size: 17px;
@@ -1737,21 +1738,21 @@ svg {
 }
 
 .project-tags {
-  font: 6px/1.8 var(--mono);
+  font: var(--min-content-size)/1.8 var(--mono);
   letter-spacing: .2px;
   color: #a78eb5;
-  font-size: 11px;
+  font-size: var(--min-content-size);
   line-height: 1.8;
 }
 
 .project a.project-link {
   display: inline-block;
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   border-bottom: 1px solid #90779f;
   padding-bottom: 4px;
   margin-top: 9px;
   color: #d7c2e3;
-  font-size: 13px;
+  font-size: var(--min-content-size);
   min-height: 44px;
   padding: 14px 0 9px;
 }
@@ -1761,10 +1762,10 @@ svg {
 }
 
 .bonus-note {
-  font: 8px/1.8 var(--mono);
+  font: var(--min-content-size)/1.8 var(--mono);
   color: #a58caf;
   margin: 25px 0 0;
-  font-size: 12px;
+  font-size: var(--min-content-size);
   line-height: 1.8;
   margin-top: 30px;
 }
@@ -1782,7 +1783,7 @@ svg {
 }
 
 .contact-links a {
-  font: 15px var(--serif);
+  font: var(--min-content-size) var(--serif);
   border-bottom: 1px solid #b092c33b;
   padding: 19px 0;
   display: flex;
@@ -1793,7 +1794,7 @@ svg {
 }
 
 .contact-links a small {
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   align-self: center;
   color: #b49ac3;
   font-size: 18px;
@@ -1839,18 +1840,18 @@ svg {
 }
 
 .contact-disc small {
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   position: absolute;
   bottom: 50px;
   letter-spacing: 1px;
-  font-size: 9px;
+  font-size: var(--min-content-size);
 }
 
 .contact-footer {
   border-top: 1px solid #b195c438;
   margin-top: 32px;
   padding-top: 26px;
-  font: 10px/1.9 var(--sans);
+  font: var(--min-content-size)/1.9 var(--sans);
   color: #c4b0cf;
   font-size: 17px;
   line-height: 1.9;
@@ -1866,9 +1867,9 @@ svg {
   display: flex;
   gap: 24px;
   margin-top: 28px;
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #b8a0c6;
-  font-size: 13px;
+  font-size: var(--min-content-size);
   flex-wrap: wrap;
 }
 
@@ -1882,7 +1883,7 @@ svg {
   justify-content: space-between;
   border-top: 1px solid #b195c426;
   padding-top: 22px;
-  font: 5px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: 1px;
   color: #9e87ac;
   gap: 20px;
@@ -1930,11 +1931,11 @@ svg {
 }
 
 .saver-controls p {
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #b4a1bf;
   margin: 0;
   letter-spacing: .6px;
-  font-size: 13px;
+  font-size: var(--min-content-size);
 }
 
 .saver-control-row {
@@ -1950,11 +1951,11 @@ svg {
   border: 1px solid #8c739f80;
   color: #cfb8df;
   padding: 11px 15px;
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   border-radius: 3px;
   backdrop-filter: blur(5px);
   min-height: 44px;
-  font-size: 12px;
+  font-size: var(--min-content-size);
 }
 
 .saver-controls button:hover {
@@ -1986,10 +1987,10 @@ svg {
 }
 
 .corner-celebration span {
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   margin-top: 13px;
   letter-spacing: 2px;
-  font-size: 12px;
+  font-size: var(--min-content-size);
 }
 
 .power-view {
@@ -2001,7 +2002,7 @@ svg {
 }
 
 .power-view p {
-  font: 10px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #a08cab;
   letter-spacing: 3px;
   margin: 0;
@@ -2012,7 +2013,7 @@ svg {
   margin: 0 auto;
   background: transparent;
   color: #b59bc5;
-  font-size: 14px;
+  font-size: var(--min-content-size);
 }
 
 .powered-off .screen {
@@ -2093,13 +2094,13 @@ svg {
   border: 0;
   background: none;
   color: #ab91bc;
-  font: 7px var(--mono);
+  font: var(--min-content-size) var(--mono);
   padding: 18px 0;
   text-align: left;
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  font-size: 14px;
+  font-size: var(--min-content-size);
   min-height: 52px;
 }
 
@@ -2108,7 +2109,7 @@ svg {
 }
 
 .copy-email span {
-  font-size: 11px;
+  font-size: var(--min-content-size);
   letter-spacing: 1px;
   align-self: center;
 }
@@ -2130,7 +2131,7 @@ svg {
   background: transparent;
   padding: 0;
   color: #d5bddf;
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .3px;
 }
 
@@ -2139,7 +2140,7 @@ svg {
 }
 
 .screen-footer a {
-  font-size: 7px;
+  font-size: var(--min-content-size);
   align-self: center;
 }
 
@@ -2168,7 +2169,7 @@ svg {
 }
 
 .reading-mode .eyebrow,.reading-mode .section-title {
-  font-size: 13px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .content-view {
@@ -2176,7 +2177,7 @@ svg {
 }
 
 .reading-mode .menu-nav a {
-  font-size: 14px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .menu-nav a span {
@@ -2184,7 +2185,7 @@ svg {
 }
 
 .reading-mode .home-bottom small,.reading-mode .project-tags,.reading-mode .artifact-meta {
-  font-size: 12px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .draft-notice {
@@ -2200,7 +2201,7 @@ svg {
 }
 
 .reading-mode .skill-chips span {
-  font-size: 13px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .experience-row h3 {
@@ -2208,7 +2209,7 @@ svg {
 }
 
 .reading-mode .experience-row .date {
-  font-size: 12px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .screen-footer {
@@ -2216,11 +2217,11 @@ svg {
 }
 
 .reading-mode .screen-footer button,.reading-mode .screen-footer a {
-  font-size: 10px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .project a.project-link {
-  font-size: 10px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .contact-links a {
@@ -2232,7 +2233,7 @@ svg {
 }
 
 .reading-mode .plain-nav {
-  font-size: 10px;
+  font-size: var(--min-content-size);
 }
 
 .reading-mode .home-grid {
@@ -2246,14 +2247,14 @@ svg {
 
 .below-tv button.reading-toggle {
   display: block;
-  font: 8px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #766381;
   margin-top: 2px;
   text-align: left;
   text-decoration: underline;
   text-underline-offset: 3px;
   min-height: 44px;
-  font-size: 13px;
+  font-size: var(--min-content-size);
 }
 
 .scroll-hint {
@@ -2266,12 +2267,12 @@ svg {
   border: 1px solid #9b7cac55;
   border-radius: 3px;
   padding: 9px 12px;
-  font: 6px var(--mono);
+  font: var(--min-content-size) var(--mono);
   letter-spacing: .3px;
   pointer-events: none;
   opacity: 0;
   transition: opacity .2s;
-  font-size: 11px;
+  font-size: var(--min-content-size);
 }
 
 .scroll-hint.visible {
@@ -2301,7 +2302,7 @@ svg {
 }
 
 .screen-footer button, .screen-footer a {
-  font-size: 12px;
+  font-size: var(--min-content-size);
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -2318,7 +2319,7 @@ svg {
 }
 
 .reading-mode .screen-footer button, .reading-mode .screen-footer a, .reading-mode .project a.project-link, .reading-mode .plain-nav {
-  font-size: 13px;
+  font-size: var(--min-content-size);
 }
 
 @media (max-width: 1200px) {
@@ -2346,7 +2347,7 @@ svg {
     gap: 10px 16px;
   }
   .menu-nav a {
-    font-size: 12px;
+    font-size: var(--min-content-size);
   }
   .menu-nav a span {
     display: none;
@@ -2396,7 +2397,7 @@ svg {
     font-size: 19px;
   }
   .intro-strip > span {
-    font-size: 10px;
+    font-size: var(--min-content-size);
     margin-right: 10px;
   }
   .contact-disc {
@@ -2408,34 +2409,34 @@ svg {
   }
   .contact-disc small {
     bottom: 36px;
-    font-size: 7px;
+    font-size: var(--min-content-size);
   }
 }
 
 @media (max-width: 700px) {
   .brand b {
-    font-size: 12px;
+    font-size: var(--min-content-size);
   }
   .stage-heading {
     padding: 21px 6px;
-    font-size: 10px;
+    font-size: var(--min-content-size);
     gap: 12px;
   }
   .stage-heading p {
-    font-size: 15px;
+    font-size: var(--min-content-size);
   }
   .cabinet-top span:last-child {
-    font-size: 7px;
+    font-size: var(--min-content-size);
   }
   .screen-osd > span:last-child {
-    font-size: 10px;
+    font-size: var(--min-content-size);
     letter-spacing: .5px;
   }
   .osd-small {
     display: none;
   }
   .profile-view > .eyebrow {
-    font-size: 10px;
+    font-size: var(--min-content-size);
     margin-bottom: 25px;
   }
   .profile-view h1 {
@@ -2466,23 +2467,23 @@ svg {
   }
   .below-tv {
     padding: 20px 7px 24px;
-    font-size: 10px;
+    font-size: var(--min-content-size);
     gap: 16px;
   }
   .below-tv > span {
     max-width: 55%;
   }
   .below-tv > span > span {
-    font-size: 15px;
+    font-size: var(--min-content-size);
   }
   .below-tv button {
-    font-size: 15px;
+    font-size: var(--min-content-size);
   }
   .below-tv button > span {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .below-tv button.reading-toggle {
-    font-size: 12px;
+    font-size: var(--min-content-size);
   }
   .intro-strip {
     padding: 22px 7px;
@@ -2515,7 +2516,7 @@ svg {
     margin-bottom: 28px;
   }
   .menu-nav a {
-    font-size: 12px;
+    font-size: var(--min-content-size);
     justify-content: center;
     white-space: normal;
     text-align: center;
@@ -2533,12 +2534,12 @@ svg {
     font-size: 17px;
   }
   .eyebrow {
-    font-size: 11px;
+    font-size: var(--min-content-size);
     line-height: 1.7;
     letter-spacing: 1px;
   }
   .screen-button {
-    font-size: 13px;
+    font-size: var(--min-content-size);
     min-height: 50px;
     padding: 13px 17px;
   }
@@ -2547,7 +2548,7 @@ svg {
     margin: 8px auto 25px;
   }
   .portrait-frame > span {
-    font-size: 13px;
+    font-size: var(--min-content-size);
   }
   .portrait-flower {
     width: 68px;
@@ -2566,7 +2567,7 @@ svg {
     font-size: 22px;
   }
   .home-bottom small {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .page-heading h1 {
     font-size: 42px;
@@ -2594,13 +2595,13 @@ svg {
     line-height: 1.35;
   }
   .experience-row .date {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .experience-row p {
     font-size: 17px;
   }
   .skill-chips span {
-    font-size: 12px;
+    font-size: var(--min-content-size);
   }
   .artifact-feature {
     grid-template-columns: 1fr;
@@ -2619,7 +2620,7 @@ svg {
     font-size: 17px;
   }
   .inline-tag {
-    font-size: 10px;
+    font-size: var(--min-content-size);
   }
   .draft-notice {
     font-size: 16px;
@@ -2632,7 +2633,7 @@ svg {
     gap: 12px;
   }
   .coming-slots span {
-    font-size: 10px;
+    font-size: var(--min-content-size);
   }
   .project {
     grid-template-columns: 1fr;
@@ -2649,7 +2650,7 @@ svg {
     font-size: 17px;
   }
   .project-tags {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .contact-layout {
     grid-template-columns: 1fr;
@@ -2659,7 +2660,7 @@ svg {
     font-size: 24px;
   }
   .copy-email {
-    font-size: 13px;
+    font-size: var(--min-content-size);
     gap: 10px;
   }
   .contact-disc {
@@ -2671,7 +2672,7 @@ svg {
     top: 40px;
   }
   .contact-disc small {
-    font-size: 8px;
+    font-size: var(--min-content-size);
     bottom: 42px;
   }
   .contact-footer {
@@ -2682,10 +2683,10 @@ svg {
     gap: 8px 18px;
   }
   .screen-footer button, .screen-footer a {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .scroll-hint {
-    font-size: 10px;
+    font-size: var(--min-content-size);
     right: 15px;
     bottom: 14px;
   }
@@ -2694,14 +2695,14 @@ svg {
     padding: 0 15px;
   }
   .saver-controls button {
-    font-size: 11px;
+    font-size: var(--min-content-size);
     padding: 11px 12px;
   }
   .corner-celebration strong {
     font-size: 39px;
   }
   .reading-mode .menu-nav a {
-    font-size: 12px;
+    font-size: var(--min-content-size);
   }
   .reading-mode .page-heading h1 {
     font-size: 44px;
@@ -2713,24 +2714,24 @@ svg {
 
 @media (max-width: 480px) {
   .stage-heading {
-    font-size: 9px;
+    font-size: var(--min-content-size);
     gap: 8px;
     padding: 19px 6px;
   }
   .stage-heading p {
-    font-size: 13px;
+    font-size: var(--min-content-size);
   }
   .cabinet-top {
     letter-spacing: .6px;
   }
   .cabinet-top span:last-child {
-    font-size: 6px;
+    font-size: var(--min-content-size);
   }
   .screen-osd > span:last-child {
-    font-size: 9px;
+    font-size: var(--min-content-size);
   }
   .profile-view > .eyebrow {
-    font-size: 10px;
+    font-size: var(--min-content-size);
     letter-spacing: .9px;
   }
   .profile-name {
@@ -2755,7 +2756,7 @@ svg {
     justify-content: center;
   }
   .below-tv {
-    font-size: 10px;
+    font-size: var(--min-content-size);
   }
   .below-tv > span {
     max-width: 58%;
@@ -2768,7 +2769,7 @@ svg {
     gap: 4px 8px;
   }
   .menu-nav a {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .home-copy h1 {
     font-size: 52px;
@@ -2780,16 +2781,16 @@ svg {
     font-size: 38px;
   }
   .screen-footer button, .screen-footer a {
-    font-size: 10px;
+    font-size: var(--min-content-size);
   }
   .saver-control-row {
     gap: 9px;
   }
   .saver-controls button {
-    font-size: 10px;
+    font-size: var(--min-content-size);
   }
   .reading-mode .menu-nav a {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .reading-mode .page-heading h1 {
     font-size: 40px;
@@ -2798,17 +2799,17 @@ svg {
 
 @media (max-width: 360px) {
   .brand b {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .content-view {
     padding-left: 16px;
     padding-right: 16px;
   }
   .copy-email {
-    font-size: 12px;
+    font-size: var(--min-content-size);
   }
   .copy-email span {
-    font-size: 10px;
+    font-size: var(--min-content-size);
   }
 }
 
@@ -2834,7 +2835,7 @@ svg {
 
 .header-role {
   color: #766b7d;
-  font-size: 14px;
+  font-size: var(--min-content-size);
   white-space: nowrap;
 }
 
@@ -2856,7 +2857,7 @@ svg {
   min-height: 32px;
   display: inline-flex;
   align-items: center;
-  font: 10px var(--mono);
+  font: var(--min-content-size) var(--mono);
   color: #766381;
 }
 
@@ -2968,23 +2969,23 @@ body.reading-mode {
     gap: 16px;
   }
   .brand {
-    font-size: 12px;
+    font-size: var(--min-content-size);
     gap: 9px;
   }
   .brand-mark {
     font-size: 29px;
   }
   .brand-mark span {
-    font-size: 15px;
+    font-size: var(--min-content-size);
     top: -5px;
     right: -8px;
   }
   .header-edition {
-    font-size: 9px;
+    font-size: var(--min-content-size);
     letter-spacing: .4px;
   }
   .header-link {
-    font-size: 13px;
+    font-size: var(--min-content-size);
   }
   .header-link span {
     margin-left: 6px;
@@ -3003,12 +3004,12 @@ body.reading-mode {
     border-radius: 22px 22px 18px 18px;
   }
   .cabinet-top {
-    font-size: 7px;
+    font-size: var(--min-content-size);
     padding: 0 7px 4px;
     line-height: 12px;
   }
   .cabinet-top span:last-child {
-    font-size: 6px;
+    font-size: var(--min-content-size);
   }
   .screen-bezel {
     padding: 6px;
@@ -3021,7 +3022,7 @@ body.reading-mode {
     top: 16px;
     left: 18px;
     right: 18px;
-    font-size: 14px;
+    font-size: var(--min-content-size);
   }
   .tv-controls {
     height: 74px;
@@ -3043,7 +3044,7 @@ body.reading-mode {
     font-size: 19px;
   }
   .hardware-button small {
-    font-size: 8px;
+    font-size: var(--min-content-size);
   }
   .physical-controls {
     gap: 4px;
@@ -3070,10 +3071,10 @@ body.reading-mode {
     height: 34px;
   }
   .disc-tray span {
-    font-size: 8px;
+    font-size: var(--min-content-size);
   }
   .deck-display {
-    font-size: 10px;
+    font-size: var(--min-content-size);
     padding: 5px 8px;
   }
   .deck-display small {
@@ -3123,13 +3124,13 @@ body.reading-mode {
     position: static;
     width: 44px;
     height: 44px;
-    font-size: 13px;
+    font-size: var(--min-content-size);
   }
   .remote-menu {
     padding: 5px 10px;
     margin: 0;
     min-height: 38px;
-    font-size: 10px;
+    font-size: var(--min-content-size);
   }
   .profile-view {
     padding: 44px 10px 12px;
@@ -3154,11 +3155,11 @@ body.reading-mode {
     margin-top: 12px;
   }
   .profile-caption {
-    font-size: 10px;
+    font-size: var(--min-content-size);
     margin-top: 7px;
   }
   .skip-profile {
-    font-size: 14px;
+    font-size: var(--min-content-size);
     margin-top: 16px;
   }
   .site-footer {
@@ -3170,7 +3171,7 @@ body.reading-mode {
     gap: 14px;
   }
   .site-footer button, .site-footer a {
-    font-size: 9px;
+    font-size: var(--min-content-size);
   }
   .site-footer > span {
     display: none;
@@ -3220,13 +3221,13 @@ body.reading-mode {
     padding: 0 10px;
   }
   .brand {
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .header-edition {
-    font-size: 8px;
+    font-size: var(--min-content-size);
   }
   .header-link {
-    font-size: 12px;
+    font-size: var(--min-content-size);
   }
   .tv-wordmark {
     font-size: 17px;
@@ -3285,7 +3286,7 @@ body.reading-mode {
 }
 
 .artifact-actions .screen-button {
-  font-size: 12px;
+  font-size: var(--min-content-size);
   line-height: 1.5;
   text-align: center;
 }
@@ -3346,7 +3347,7 @@ body.reading-mode {
 
 .artifact-screenshot figcaption {
   margin-top: 12px;
-  font: 12px/1.7 var(--mono);
+  font: var(--min-content-size)/1.7 var(--mono);
   color: #bfa8cb;
 }
 
@@ -3396,7 +3397,7 @@ body.reading-mode {
   color: #e3ccaa;
   border-bottom: 1px solid #ac896d80;
   padding-bottom: 6px;
-  font: 11px/1.6 var(--mono);
+  font: var(--min-content-size)/1.6 var(--mono);
   letter-spacing: 1px;
 }
 
@@ -3406,7 +3407,7 @@ body.reading-mode {
   gap: 10px 20px;
   padding-left: 17px;
   margin: 20px 0;
-  font-size: 13px;
+  font-size: var(--min-content-size);
   line-height: 1.7;
   color: #d5c0df;
 }
@@ -3431,7 +3432,7 @@ body.reading-mode {
   }
   .artifact-actions .screen-button {
     width: 100%;
-    font-size: 11px;
+    font-size: var(--min-content-size);
   }
   .project-featured {
     padding: 18px;
@@ -3442,5 +3443,220 @@ body.reading-mode {
   .project-features {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+}
+
+/* Keep labels readable without shrinking the portfolio to fit its cabinet. */
+.television {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.cabinet-top {
+  line-height: 18px;
+  padding-bottom: 0;
+}
+
+.remote-pad {
+  margin-top: 12px;
+}
+
+.remote-note {
+  position: relative;
+  inset: auto;
+  margin-top: auto;
+  padding-top: 10px;
+  transform: rotate(-5deg);
+  color: #493653;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.remote-note span {
+  position: static;
+  font-size: 21px;
+}
+
+.remote {
+  transform: rotate(6deg);
+}
+
+.hardware-button small {
+  font-family: var(--sans);
+  letter-spacing: 0;
+}
+
+.hardware-button {
+  width: 72px;
+}
+
+.disc-tray {
+  min-width: 0;
+  flex: 1;
+  gap: 12px;
+}
+
+.disc-tray span {
+  letter-spacing: 0;
+}
+
+.deck-display {
+  flex: none;
+  max-width: none;
+}
+
+.screen-osd {
+  letter-spacing: 0;
+}
+
+.profile-caption {
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.menu-nav, .screen-footer, .plain-nav {
+  line-height: 1.5;
+}
+
+.site-footer {
+  height: 44px;
+}
+
+.footer-controls {
+  gap: 16px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 900px) {
+  .setup {
+    grid-template-columns: minmax(0, 1fr) 164px;
+    column-gap: 12px;
+  }
+  .remote {
+    width: 146px;
+    transform: rotate(3deg);
+  }
+  .tv-wordmark {
+    display: none;
+  }
+  .physical-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .deck-display small, .deck-brand small {
+    display: none;
+  }
+  .profile {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-edition {
+    display: none;
+  }
+  .setup {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) 50px 6px 84px;
+  }
+  .television {
+    grid-template-rows: 20px minmax(0, 1fr) 74px;
+  }
+  .remote {
+    width: min(100% - 18px, 430px);
+    height: 80px;
+    padding-bottom: 25px;
+    transform: none;
+    gap: 8px;
+  }
+  .remote-pad {
+    margin-top: 0;
+  }
+  .remote-note {
+    position: absolute;
+    top: auto;
+    bottom: 3px;
+    right: 18px;
+    padding: 0;
+    transform: none;
+    font-size: var(--min-content-size);
+  }
+  .remote-note span {
+    font-size: var(--min-content-size);
+  }
+  .remote-menu {
+    padding: 5px 8px;
+  }
+  .menu-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .content-view {
+    overflow-wrap: anywhere;
+  }
+  .copy-email {
+    flex-wrap: wrap;
+  }
+  .bio-photo {
+    max-width: 100%;
+  }
+  .profiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .profile {
+    width: 100%;
+  }
+  .avatar {
+    width: min(100%, 91px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .profile-name {
+    white-space: normal;
+    line-height: 1.25;
+  }
+  .disc-tray {
+    padding: 0 8px;
+  }
+  .disc-tray span {
+    font-family: var(--sans);
+  }
+  .deck-display {
+    font-family: var(--sans);
+  }
+  .site-footer a {
+    display: none;
+  }
+  .reading-mode .setup {
+    grid-template-rows: auto 50px 6px 84px;
+  }
+  .reading-mode.screensaver-active .setup {
+    grid-template-rows: minmax(0, 1fr) 50px 6px 84px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hardware-button {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+  }
+  .power-button {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .power-led {
+    display: none;
+  }
+  .remote-pad button, .remote-pad .remote-ok {
+    width: 36px;
+  }
+  .remote-top > span {
+    font-size: 20px;
+  }
+  .remote-menu {
+    padding: 5px 6px;
+  }
+  .profile-view h1 {
+    font-size: 32px;
   }
 }
