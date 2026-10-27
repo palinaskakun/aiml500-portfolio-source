@@ -4491,3 +4491,29 @@ body.reading-mode.screensaver-active {
     line-height: 1.8;
   }
 }
+
+/* Shared authorship credit, including the viewer-selection screen. */
+.site-footer {
+  height: auto;
+  min-height: 44px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.footer-credit {
+  display: grid;
+  gap: 5px;
+  max-width: 650px;
+  font: 10px/1.45 var(--mono);
+  letter-spacing: 0;
+}
+@media (max-width: 900px) {
+  .site-footer {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .footer-credit {
+    width: 100%;
+    max-width: none;
+    font-size: 9px;
+  }
+}
