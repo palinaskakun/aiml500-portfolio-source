@@ -11,7 +11,7 @@ Use the DVD theme in the writing without losing the reflection's substance. Thre
 - Who specifically is the chatbot artifact for, and what does that audience need?
 - What did you change about the artifact itself for that audience: examples, terminology, instructions, presentation, or level of detail?
 - Why is the chatbot useful to that audience? Point to the actual deliverable rather than only the portfolio's TV theme.
-- The portfolio's professor profile prioritizes coursework, while the recruiter profile prioritizes earlier project evidence. Explain this distinction only if it is relevant to your reflection.
+- The portfolio's Dr. Collins profile prioritizes coursework, while the recruiter profile prioritizes earlier project evidence. Explain this distinction only if it is relevant to your reflection.
 
 ### Behind the scenes
 

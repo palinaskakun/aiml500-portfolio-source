@@ -18,11 +18,13 @@ npm test
 npm run build
 ```
 
-The build produces `dist/`, which can be hosted on GitHub Pages, Netlify, Cloudflare Pages, or another static host. All assets and links inside the site use relative paths, including when hosted under a repository subpath. Hosting is intentionally left for later.
+The build produces `dist/`, which can be hosted on Vercel, GitHub Pages, Netlify, Cloudflare Pages, or another static host. All assets and links inside the site use relative paths, including when hosted under a repository subpath.
+
+For Vercel, `vercel.json` sets the build command to `npm run build` and the output directory to `dist`. Commit and push this file before deploying so Vercel uses the correct directory instead of its default `public` directory.
 
 ## The experience
 
-- **Viewer picker:** The professor, The recruiter, and Just looking. This is a playful entrance, not authentication. Each profile changes the home introduction and primary call to action. Viewer preference is saved only in the current browser.
+- **Viewer picker:** Dr. Collins, Recruiter, and Guest. This is a playful entrance, not authentication. Each profile changes the home introduction and primary call to action. Viewer preference is saved only in the current browser.
 - **Main menu:** Introduction, a graduation portrait, and routes into coursework and independent projects.
 - **About me:** Bio, personal value proposition, experience, and tools based on supplied material.
 - **Coursework:** AI Lab team chatbot placeholder, with all required artifact sections. No completed chatbot, evaluation, or contribution is claimed.
@@ -30,14 +32,14 @@ The build produces `dist/`, which can be hosted on GitHub Pages, Netlify, Cloudf
 - **Contact:** Email, LinkedIn, GitHub, and a copy-email button.
 - **DVD screensaver:** Real wall reflections, color changes, a corner-hit counter, pause, and “manifest a corner” to aim the logo at a corner over four seconds. Escape returns to the prior chapter.
 - **Hardware:** Working remote navigation, eject, power/standby, optional synthesized button sounds, and a visual-effects toggle.
-- **Comfy reading:** Larger body text, a taller screen, ordinary page scrolling, and no scanlines. Available at the bottom of each content chapter. Reduced-motion system preferences are respected; sound is off by default.
+- **Reading view:** Larger body text, a taller screen, ordinary page scrolling, and no scanlines. Available at the bottom of each content chapter. Reduced-motion system preferences are respected; sound is off by default.
 
 There are no external fonts, analytics, accounts, backend services, or runtime dependencies.
 
 ## Editing
 
 - `app.js`: content, viewer routing, controls, project data, and the course artifact template.
-- `styles.css`: TV cabinet, screen, responsive styles, and comfortable reading mode.
+- `styles.css`: TV cabinet, screen, responsive styles, and reading view.
 - `assets/`: optimized local photos and favicon.
 - `lib/bounce.js`: reflection math, exercised by `tests/bounce.test.mjs`.
 - `docs/`: planning and reflection notes; these are **excluded from the static build**.
