@@ -57,3 +57,11 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Used the supplied Cornflower artwork for the featured TSIKAVA card, preserving its full aspect ratio. Added the supplied Vercel link alongside GitHub. The supplied deployment redirects unauthenticated visitors to Vercel login.
 - Moved the remote note below the remote with a measured positive gap on desktop and mobile. Added a keyboard-accessible remote power button and synchronized both power controls. Verified standby and recovery through the browser.
 - Checked profile and content routes at 320px and 1280px, plus the user's normal preview size. No horizontal page overflow. Syntax checks, all four existing animation tests, stylesheet parsing, and the static build passed.
+
+
+## Final report and project screenshots — October 27, 2026
+
+- Replaced the report asset byte-for-byte with the supplied final three-page PDF. Updated the report button and its citation date to match the final report. The stable report URL is unchanged.
+- Added the supplied screenshots and live links for Vektor, the independent humane society concept, and Catch the Banana; retained their GitHub links. Updated the banana entry to mention the browser version.
+- Verified all three live URLs open publicly in the browser. Verified all three local screenshot images load at their original proportions without cropping or rotation. Checked the narrow layout for horizontal overflow.
+- Syntax checks, stylesheet parsing, static build, source/build PDF comparison, and whitespace checks passed.
