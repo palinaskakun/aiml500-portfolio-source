@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#eeece3" />
     <meta name="description" content="Palina Skakun’s portfolio: software engineering, AI and machine learning, coursework, and selected projects." />
-    <title>Palina Home Video — Palina Skakun</title>
+    <title>Palina Skakun — Palinasonic</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./app.js" type="module"></script>
@@ -13,11 +13,7 @@
   <body>
     <a class="skip-link" href="#screen-content">Skip to portfolio</a>
     <header class="site-header">
-      <a class="brand" href="#profiles" aria-label="Palina Home Video, choose viewer">
-        <span class="brand-mark" aria-hidden="true">p<span>✳</span></span>
-        <span class="brand-name">Palina Video</span>
-      </a>
-      <span class="header-edition">PORTFOLIO / VOL. 01</span>
+      <a class="brand" href="#profiles" aria-label="Palina Skakun, choose viewer">palina skakun</a>
       <span class="header-role">Software engineer & creator</span>
       <a class="header-link" href="#about">About me <span aria-hidden="true">↗</span></a>
     </header>
@@ -37,7 +33,7 @@
             </div>
           </div>
           <div class="tv-controls">
-            <div class="tv-wordmark">palina<span>vision</span></div>
+            <div class="tv-wordmark">palinasonic</div>
             <div class="speaker" aria-hidden="true"></div>
             <div class="physical-controls">
               <button class="hardware-button" id="motion-button" aria-pressed="false" title="Pause visual effects"><span aria-hidden="true">Ⅱ</span><small id="motion-label">MOTION</small></button>
@@ -57,19 +53,21 @@
         </div>
         <div class="tv-feet" aria-hidden="true"><i></i><i></i></div>
 
-        <aside class="remote" aria-label="Portfolio remote control">
-          <div class="remote-top"><span>ps.</span><i></i></div>
-          <div class="remote-pad">
-            <button data-remote="previous" class="remote-up" aria-label="Previous channel">▲</button>
-            <button data-remote="back" class="remote-left" aria-label="Go back">◀</button>
-            <button data-remote="home" class="remote-ok" aria-label="Main menu">OK</button>
-            <button data-remote="next" class="remote-right" aria-label="Next channel">▶</button>
-            <button data-remote="next" class="remote-down" aria-label="Next channel">▼</button>
-          </div>
-          <button data-remote="menu" class="remote-menu">MENU</button>
-          <div class="remote-colors"><button data-route="about" aria-label="About Palina"></button><button data-route="artifacts" aria-label="Course artifacts"></button><button data-route="bonus" aria-label="Bonus projects"></button><button data-route="contact" aria-label="Contact Palina"></button></div>
-          <span class="handwritten remote-note">yes, it works <span aria-hidden="true">↗</span></span>
-        </aside>
+        <div class="remote-group">
+          <aside class="remote" aria-label="Portfolio remote control">
+            <div class="remote-top"><span>ps.</span><button class="remote-power" id="remote-power-button" aria-label="Turn television off" aria-pressed="true" title="Turn television off"><span aria-hidden="true">⏻</span></button></div>
+            <div class="remote-pad">
+              <button data-remote="previous" class="remote-up" aria-label="Previous channel">▲</button>
+              <button data-remote="back" class="remote-left" aria-label="Go back">◀</button>
+              <button data-remote="home" class="remote-ok" aria-label="Main menu">OK</button>
+              <button data-remote="next" class="remote-right" aria-label="Next channel">▶</button>
+              <button data-remote="next" class="remote-down" aria-label="Next channel">▼</button>
+            </div>
+            <button data-remote="menu" class="remote-menu">MENU</button>
+            <div class="remote-colors"><button data-route="about" aria-label="About Palina"></button><button data-route="artifacts" aria-label="Course artifacts"></button><button data-route="bonus" aria-label="Bonus projects"></button><button data-route="contact" aria-label="Contact Palina"></button></div>
+          </aside>
+        <span class="handwritten remote-note">yes, it works <span aria-hidden="true">↗</span></span>
+        </div>
 
       </div>
 

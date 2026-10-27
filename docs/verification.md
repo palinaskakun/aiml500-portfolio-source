@@ -48,3 +48,12 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 
 - Final browser pass confirmed the first project is TSIKAVA, the bio uses Dearborn, all seven artifact sections are present, and all eight team members are credited. No page or TV-content horizontal overflow in the phone check; no browser console errors.
 - Both PDF routes return HTTP 200 with application/pdf, and both published files match the original attachments byte for byte.
+
+
+## Palinasonic branding and remote update — October 27, 2026
+
+- Replaced the header with the full name in the original italic Georgia wordmark style and a separated role label. Removed the asterisk and Home Video copy from the site.
+- Reused locally bundled Aeonik regular/bold and Graebenbach Mono from the earlier portfolio; content remains at least 16px. Font assets return the correct font MIME types.
+- Used the supplied Cornflower artwork for the featured TSIKAVA card, preserving its full aspect ratio. Added the supplied Vercel link alongside GitHub. The supplied deployment redirects unauthenticated visitors to Vercel login.
+- Moved the remote note below the remote with a measured positive gap on desktop and mobile. Added a keyboard-accessible remote power button and synchronized both power controls. Verified standby and recovery through the browser.
+- Checked profile and content routes at 320px and 1280px, plus the user's normal preview size. No horizontal page overflow. Syntax checks, all four existing animation tests, stylesheet parsing, and the static build passed.

@@ -38,7 +38,7 @@ const footer = () => `<div class="screen-footer"><button data-reading-mode aria-
 const wrap = (active, html) => `<section class="content-view ${active}-view">${nav(active)}${html}${footer()}</section>`;
 
 function profileView() {
-  return `<section class="profile-view" aria-labelledby="page-title"><p class="eyebrow">WELCOME TO PALINA HOME VIDEO</p><h1 id="page-title">Who's tuning in?</h1><p class="profile-subtitle">Select a profile.</p><div class="profiles">${[
+  return `<section class="profile-view" aria-labelledby="page-title"><p class="eyebrow">WELCOME TO PALINASONIC</p><h1 id="page-title">Who's tuning in?</h1><p class="profile-subtitle">Select a profile.</p><div class="profiles">${[
     ['professor', 'Dr. Collins', 'COURSEWORK'],
     ['recruiter', 'Recruiter', 'PROJECTS'],
     ['curious', 'Guest', 'EXPLORE'],
@@ -70,10 +70,10 @@ function artifactView() {
       <p>A team-built chatbot prototype that helps people explore activities through a conversation about their interests, time, and preferences.</p>
     </header>
     <article class="artifact-feature">
-      <div class="artifact-cover"><small>PALINA HOME VIDEO<br />AIML-500 / DISC 01</small><h2>Boredom<br />Buster AI</h2>${icons.chat}<span>WORKSHOP 1.4 / TEAM 1</span></div>
+      <div class="artifact-cover"><small>PALINASONIC<br />AIML-500 / DISC 01</small><h2>Boredom<br />Buster AI</h2>${icons.chat}<span>WORKSHOP 1.4 / TEAM 1</span></div>
       <div class="artifact-summary">
         <span class="inline-tag artifact-published">PUBLISHED PROTOTYPE · TEAM PROJECT</span>
-        <h2>From “I’m bored” to a starting point.</h2>
+        <h2>From “I’m bored” to a fun idea.</h2>
         <p>Our team explored chatbot platforms, developed conversational instructions, and tested ways to offer personalized activity ideas. This entry presents the submitted Base44 prototype alongside the project report and original team documentation.</p>
         <div class="artifact-meta">TEAM 1 · OCTOBER 2026 · AI LAB</div>
         <div class="artifact-actions"><a class="screen-button" href="https://beat-boredom-bot.base44.app/" target="_blank" rel="noopener noreferrer">OPEN CHATBOT ↗</a><a class="screen-button secondary" href="./assets/artifacts/boredom-buster-report.pdf" target="_blank" rel="noopener noreferrer">PROJECT REPORT · PDF ↗</a></div>
@@ -145,7 +145,7 @@ function artifactView() {
 
 
 const projects = [
-  { title: 'TSIKAVA Coffee', image: 'tsikava-coffee.webp', alt: 'Latte artwork from the TSIKAVA coffee-shop prototype', featured: true, subtitle: 'Coffee-shop prototype', description: 'My proudest project so far: a coffee-shop web prototype that brings a Belarusian-inspired brand into a complete browsing and ordering experience. It combines a drink menu, customization, a persistent cart, customer accounts, order history, and a Stripe sandbox checkout.', features: ['Brand & interface design', 'Drink customization', 'Accounts & orders', 'Sandbox checkout'], tags: 'NEXT.JS / TYPESCRIPT / SUPABASE / STRIPE • PROTOTYPE', repo: 'tsikava-coffee' },
+  { title: 'TSIKAVA Coffee', image: 'tsikava-cornflower.png', alt: 'TSIKAVA Cornflower blueberry-matcha drink illustration with a striped straw, blueberries, and a Belarusian label', live: 'https://tsikava-coffee-r6qjgyd8n-palinaskakuns-projects.vercel.app/', featured: true, subtitle: 'Coffee-shop prototype', description: 'My proudest project so far: a coffee-shop web prototype that brings a Belarusian-inspired brand into a complete browsing and ordering experience. It combines a drink menu, customization, a persistent cart, customer accounts, order history, and a Stripe sandbox checkout.', features: ['Brand & interface design', 'Drink customization', 'Accounts & orders', 'Sandbox checkout'], tags: 'NEXT.JS / TYPESCRIPT / SUPABASE / STRIPE • PROTOTYPE', repo: 'tsikava-coffee' },
   { title: 'Vektor', mark: 'v↗', color: '#b4c5a5', subtitle: 'Career navigation', description: 'A career navigation prototype with a basecamp dashboard, route cards, an action plan, and a client-side job analyzer. Its current analyzer uses keywords and seeded data; a server-side AI integration is a future step.', tags: 'NEXT.JS / TYPESCRIPT / TAILWIND • PROTOTYPE', repo: 'vektor-ai' },
   { title: 'Photos Cleaner', image: 'photo-cleaner.webp', alt: 'Photos Cleaner iOS app interface from Palina’s previous portfolio', subtitle: 'Photo management for iOS', description: 'An iOS photo management project that turns clearing a camera roll into a simple keep-or-delete gesture. A small, practical problem with a playful mobile interface.', tags: 'SWIFT / iOS / GESTURE-BASED UX', repo: 'photos-cleaner' },
   { title: 'An adoption experience, reimagined', mark: '♡', color: '#d8b59d', subtitle: 'Pet adoption experience', description: 'An independent portfolio redesign exploring pet discovery, accessible profiles, saved pets, and a responsible matching assistant. A design concept, unaffiliated with the Capital Area Humane Society.', tags: 'TYPESCRIPT / WEB / INDEPENDENT DESIGN CONCEPT', repo: 'humane-society-reimagined' },
@@ -153,7 +153,7 @@ const projects = [
 ];
 
 function bonusView() {
-  return wrap('bonus', `<header class="page-heading"><span class="eyebrow">PROJECTS / INDEPENDENT WORK</span><h1 id="page-title">Selected projects.</h1><p>Web, mobile, and game projects from my GitHub repositories.</p></header><div class="project-list">${projects.map(project => `<article class="project ${project.featured ? 'project-featured' : ''}"><div class="project-visual ${project.image ? '' : 'text-art'}" ${project.image ? '' : `style="background:${project.color}"`}>${project.image ? `<img src="./assets/${project.image}" alt="${project.alt}" width="200" height="400" loading="lazy" />` : `<span aria-hidden="true">${project.mark}</span>`}</div><div>${project.featured ? '<span class="featured-label">FEATURED PROJECT</span>' : ''}<span class="eyebrow">${project.subtitle}</span><h2>${project.title}</h2><p>${project.description}</p>${project.features ? `<ul class="project-features">${project.features.map(feature => `<li>${feature}</li>`).join('')}</ul>` : ''}<div class="project-tags">${project.tags}</div><a class="project-link" href="https://github.com/palinaskakun/${project.repo}" target="_blank" rel="noopener noreferrer">EXPLORE THE PROJECT ↗</a></div></article>`).join('')}</div><p class="bonus-note">These are independent and earlier projects. Required AIML-500 artifacts live in the coursework chapter.</p><div class="plain-nav"><a href="https://github.com/palinaskakun?tab=repositories" target="_blank" rel="noopener noreferrer">ALL REPOSITORIES ↗</a><a href="#contact">CONTACT ↗</a></div>`);
+  return wrap('bonus', `<header class="page-heading"><span class="eyebrow">PROJECTS / INDEPENDENT WORK</span><h1 id="page-title">Selected projects.</h1><p>Web, mobile, and game projects from my GitHub repositories.</p></header><div class="project-list">${projects.map(project => `<article class="project ${project.featured ? 'project-featured' : ''}"><div class="project-visual ${project.image ? '' : 'text-art'}" ${project.image ? '' : `style="background:${project.color}"`}>${project.image ? `<img src="./assets/${project.image}" alt="${project.alt}" width="200" height="400" loading="lazy" />` : `<span aria-hidden="true">${project.mark}</span>`}</div><div>${project.featured ? '<span class="featured-label">FEATURED PROJECT</span>' : ''}<span class="eyebrow">${project.subtitle}</span><h2>${project.title}</h2><p>${project.description}</p>${project.features ? `<ul class="project-features">${project.features.map(feature => `<li>${feature}</li>`).join('')}</ul>` : ''}<div class="project-tags">${project.tags}</div><div class="project-actions">${project.live ? `<a class="screen-button" href="${project.live}" target="_blank" rel="noopener noreferrer">VISIT THE PROJECT ↗</a>` : ''}<a class="project-link" href="https://github.com/palinaskakun/${project.repo}" target="_blank" rel="noopener noreferrer">${project.live ? 'SOURCE ON GITHUB ↗' : 'EXPLORE THE PROJECT ↗'}</a></div></div></article>`).join('')}</div><p class="bonus-note">These are independent and earlier projects. Required AIML-500 artifacts live in the coursework chapter.</p><div class="plain-nav"><a href="https://github.com/palinaskakun?tab=repositories" target="_blank" rel="noopener noreferrer">ALL REPOSITORIES ↗</a><a href="#contact">CONTACT ↗</a></div>`);
 }
 
 function contactView() {
@@ -231,15 +231,14 @@ function render(target, focus = true) {
   stopSaver();
   powered = true;
   $('#television').classList.remove('powered-off');
-  $('#power-button').setAttribute('aria-pressed', 'true');
-  $('#power-button').setAttribute('aria-label', 'Turn television off');
+  updatePowerControls();
   const views = { profiles: profileView, home: homeView, about: aboutView, artifacts: artifactView, bonus: bonusView, contact: contactView, screensaver: saverView };
   content.innerHTML = views[valid]();
   content.scrollTop = 0;
   $('#channel-label').innerHTML = `${valid === 'screensaver' ? 'DVD' : 'AV 1'} <span class="osd-small">STEREO</span>`;
   $('#osd-right').textContent = valid === 'profiles' ? 'DVD / PORTFOLIO' : valid === 'screensaver' ? 'DVD SCREENSAVER' : `CH ${String(routes.indexOf(valid) + 1).padStart(2, '0')} / ${routeNames[valid]}`;
   $('#deck-status').textContent = routeNames[valid];
-  document.title = `${({profiles:'Choose your channel',home:'Main menu',about:'About Palina',artifacts:'Boredom Buster AI · Artifact 1',bonus:'Selected projects',contact:'Contact',screensaver:'Waiting for the corner'})[valid]} — Palina Home Video`;
+  document.title = `${({profiles:'Choose your channel',home:'Main menu',about:'About Palina',artifacts:'Boredom Buster AI · Artifact 1',bonus:'Selected projects',contact:'Contact',screensaver:'Waiting for the corner'})[valid]} — Palina Skakun · Palinasonic`;
   if (!motionPaused && focus) {
     clearTimeout(transitionTimer);
     screen.classList.remove('channel-changing');
@@ -253,13 +252,21 @@ function render(target, focus = true) {
   requestAnimationFrame(updateScrollHint);
 }
 
+function updatePowerControls() {
+  for (const selector of ['#power-button', '#remote-power-button']) {
+    const button = $(selector);
+    button.setAttribute('aria-pressed', String(powered));
+    button.setAttribute('aria-label', powered ? 'Turn television off' : 'Turn television on');
+    button.title = powered ? 'Turn television off' : 'Turn television on';
+  }
+}
+
 function setPower(on) {
   powered = on;
   if (on) { render(route); return; }
   stopSaver();
   $('#television').classList.add('powered-off');
-  $('#power-button').setAttribute('aria-pressed', 'false');
-  $('#power-button').setAttribute('aria-label', 'Turn television on');
+  updatePowerControls();
   $('#deck-status').textContent = 'STANDBY';
   $('#scroll-hint').classList.remove('visible');
   content.innerHTML = '<section class="power-view"><p>STANDBY</p><button class="screen-button" data-power-on>⏻ TURN IT BACK ON</button></section>';
@@ -378,7 +385,9 @@ $('#sound-button').addEventListener('click', () => {
   $('#sound-label').textContent = 'SOUND';
   if (soundEnabled) playClick();
 });
-$('#power-button').addEventListener('click', () => setPower(!powered));
+for (const selector of ['#power-button', '#remote-power-button']) {
+  $(selector).addEventListener('click', () => setPower(!powered));
+}
 $('#screensaver-button').addEventListener('click', () => navigate(route === 'screensaver' ? previousRoute : 'screensaver'));
 $('#bounce-link').addEventListener('click', () => navigate('screensaver'));
 $('#eject-button').addEventListener('click', () => { navigate('profiles'); showToast('Disc ejected.'); });
