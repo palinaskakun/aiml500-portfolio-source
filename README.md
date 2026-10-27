@@ -1,6 +1,6 @@
 # Palina Home Video
 
-A nostalgic, playful portfolio for **Palina Skakun**: a cream CRT television, plum DVD menu, lavender remote, and three viewer profiles. Built as a first iteration for AIML-500, with room to grow into a professional portfolio.
+A nostalgic, playful portfolio for **Palina Skakun**: a charcoal-gray CRT television, plum DVD menu, lavender remote, and three viewer profiles. Built as a first iteration for AIML-500, with room to grow into a professional portfolio.
 
 ## Preview
 
@@ -33,6 +33,8 @@ For Vercel, `vercel.json` sets the build command to `npm run build` and the outp
 - **DVD screensaver:** Real wall reflections, color changes, a corner-hit counter, pause, and “manifest a corner” to aim the logo at a corner over four seconds. Escape returns to the prior chapter.
 - **Hardware:** Working remote navigation, eject, power/standby, optional synthesized button sounds, and a visual-effects toggle.
 - **Reading view:** Larger body text, a taller screen, ordinary page scrolling, and no scanlines. Available at the bottom of each content chapter. Reduced-motion system preferences are respected; sound is off by default.
+
+The default layout fits the TV, DVD deck, and remote inside the viewport beneath a slim header. On narrow screens, the remote becomes a horizontal control below the TV. Reading view remains available for expanded content.
 
 There are no external fonts, analytics, accounts, backend services, or runtime dependencies.
 

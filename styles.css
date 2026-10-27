@@ -28,6 +28,11 @@ body {
   background-color: var(--paper);
   background-image: radial-gradient(#b4a9b82e .75px,transparent .75px);
   background-size: 7px 7px;
+  height: 100svh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 button,a {
@@ -68,22 +73,26 @@ svg {
 .site-header {
   max-width: 1600px;
   margin: auto;
-  height: 104px;
-  padding: 0 32px;
+  height: 50px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-bottom: 1px solid #aaa2ab66;
+  width: 100%;
+  min-height: 50px;
+  gap: 24px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
   font-family: var(--mono);
   font-size: 14px;
-  letter-spacing: 1.6px;
+  letter-spacing: .5px;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .brand b {
@@ -95,21 +104,23 @@ svg {
   position: relative;
   font: italic bold 48px/.8 var(--serif);
   color: #7c6896;
-  font-size: 60px;
+  font-size: 33px;
 }
 
 .brand-mark span {
   font: 23px var(--sans);
   position: absolute;
-  right: -15px;
-  top: -10px;
-  font-size: 28px;
+  right: -9px;
+  top: -6px;
+  font-size: 17px;
 }
 
 .header-edition {
   font: 10px var(--mono);
-  letter-spacing: 1.6px;
-  font-size: 12px;
+  letter-spacing: 1px;
+  font-size: 11px;
+  display: block;
+  white-space: nowrap;
 }
 
 .header-edition span {
@@ -118,10 +129,12 @@ svg {
 }
 
 .header-link {
-  font-size: 16px;
+  font-size: 14px;
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 .header-link span {
@@ -130,8 +143,11 @@ svg {
 
 .stage {
   max-width: 1600px;
-  padding: 0 32px;
+  padding: 8px 24px 0;
   margin: auto;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
 }
 
 .stage-heading {
@@ -167,28 +183,41 @@ svg {
 
 .setup {
   position: relative;
-  padding: 0 220px 0 0;
+  padding: 0;
   isolation: isolate;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 188px;
+  grid-template-rows: minmax(0, 1fr) 54px 8px;
+  gap: 4px 18px;
 }
 
 .television {
   position: relative;
-  background: linear-gradient(130deg,#e2dfd5 0%,#d4d0c9 65%,#c0bcb7 100%);
-  border-radius: 34px 34px 28px 28px;
-  padding: 16px 22px 0;
+  background: linear-gradient(135deg, #626265, #4b4b4e 64%, #3c3c40);
+  border-radius: 26px 26px 22px 22px;
+  padding: 8px 17px 0;
   border: 1px solid #aca5a2;
-  box-shadow: inset 2px 3px 2px #fff9,inset -4px -3px 3px #73697135,8px 12px 0 #6e626422,0 22px 35px #3d35451c;
+  box-shadow: inset 2px 2px 2px #9b9b9c66, inset -3px -2px 3px #25252888, 5px 7px 0 #39343b26, 0 12px 24px #3d35451a;
   z-index: 2;
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 18px minmax(0, 1fr) 72px;
+  border-color: #303033;
 }
 
 .cabinet-top {
   display: flex;
   justify-content: space-between;
-  padding: 3px 12px 14px;
-  color: #837c7f;
+  padding: 0 10px 6px;
+  color: #c1bfc5;
   font: 7px var(--mono);
   letter-spacing: 1px;
-  font-size: 10px;
+  font-size: 8px;
+  min-height: 0;
+  line-height: 12px;
 }
 
 .cabinet-top span:first-child {
@@ -197,21 +226,24 @@ svg {
 }
 
 .screen-bezel {
-  background: linear-gradient(130deg,#716c70,#b3ada9 70%);
-  padding: 12px 13px 13px;
-  border-radius: 29px 29px 48px 48px;
-  box-shadow: 0 1px 1px #fff9,inset 1px 2px 4px #514a4e60;
+  background: linear-gradient(135deg, #29292c, #535257);
+  padding: 10px 11px;
+  border-radius: 24px 24px 32px 32px;
+  box-shadow: inset 1px 2px 4px #17171c99, 0 1px 1px #8e8b9266;
+  min-height: 0;
+  display: grid;
 }
 
 .screen {
   background: radial-gradient(ellipse at 45% 40%,#403348 0%,#302736 58%,#211e27 100%);
-  height: clamp(640px, 70vh, 800px);
+  height: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: 23px 23px 38px 38px;
+  border-radius: 18px 18px 26px 26px;
   box-shadow: inset 0 0 16px 7px #09070f9c;
   border: 2px solid #27222d;
   color: var(--cream);
+  min-height: 0;
 }
 
 .screen:after {
@@ -245,9 +277,9 @@ svg {
 .screen-osd {
   position: absolute;
   z-index: 11;
-  top: 25px;
-  left: 34px;
-  right: 34px;
+  top: 18px;
+  left: 27px;
+  right: 27px;
   display: flex;
   justify-content: space-between;
   color: #c1d8a9;
@@ -255,7 +287,7 @@ svg {
   letter-spacing: 1px;
   text-shadow: 0 0 6px #bad0b05c;
   pointer-events: none;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .osd-small {
@@ -296,18 +328,23 @@ svg {
 }
 
 .tv-controls {
-  height: 100px;
+  height: 72px;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   padding: 0 12px;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: normal;
 }
 
 .tv-wordmark {
   font: italic bold 20px var(--serif);
-  color: #726974;
+  color: #d0cdd4;
   letter-spacing: -1px;
-  font-size: 28px;
+  font-size: 25px;
+  text-shadow: 0 1px 1px #27232d;
+  text-align: left;
 }
 
 .tv-wordmark>span {
@@ -318,15 +355,16 @@ svg {
   display: block;
   font: 5px var(--mono);
   letter-spacing: 1px;
-  margin-top: 7px;
-  font-size: 9px;
+  margin-top: 5px;
+  font-size: 8px;
+  color: #b0adb5;
 }
 
 .speaker {
-  height: 30px;
-  width: 180px;
-  opacity: .5;
-  background: repeating-linear-gradient(0deg,#8a8184 0,#8a8184 1px,transparent 1px,transparent 4px);
+  height: 24px;
+  width: 130px;
+  opacity: .8;
+  background: repeating-linear-gradient(0deg, #25252a 0, #25252a 1px, transparent 1px, transparent 4px);
   border-radius: 7px;
   mask-image: linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
 }
@@ -335,17 +373,17 @@ svg {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .hardware-button {
   background: none;
   border: 0;
-  width: 66px;
+  width: 60px;
   padding: 0;
   text-align: center;
-  color: #665f69;
-  min-height: 64px;
+  color: #d5d0db;
+  min-height: 56px;
 }
 
 .hardware-button>span {
@@ -355,23 +393,24 @@ svg {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background: linear-gradient(#ccc6c3,#b7afaf);
-  box-shadow: 0 1px 0 #f3eee9,inset 0 1px 1px #867d8750;
+  background: linear-gradient(#77767c, #525157);
+  box-shadow: inset 0 1px 1px #a19aa680, 0 1px 1px #222128;
   font: 12px var(--mono);
   font-size: 22px;
+  color: #eee6f6;
 }
 
 .hardware-button small {
   display: block;
   font: 5px var(--mono);
   letter-spacing: .2px;
-  padding-top: 9px;
+  padding-top: 6px;
   white-space: nowrap;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 .hardware-button:hover>span {
-  background: #a99abd;
+  background: #857091;
 }
 
 .power-button {
@@ -379,12 +418,13 @@ svg {
   height: 44px;
   border: 1px solid #a9a0a6;
   border-radius: 50%;
-  background: linear-gradient(140deg,#e7e1dc,#bcb2b6);
-  box-shadow: 0 1px 1px #fff9;
-  color: #685f6c;
+  background: linear-gradient(135deg, #818087, #55545b);
+  box-shadow: inset 0 1px 1px #b0a7b780, 0 1px 1px #211f28;
+  color: #eee7f4;
   font-size: 28px;
   display: grid;
   place-items: center;
+  border-color: #38363e;
 }
 
 .power-led {
@@ -396,25 +436,28 @@ svg {
 }
 
 .dvd-deck {
-  height: 88px;
-  margin: 5px 13px 0;
-  background: linear-gradient(#b3acb6,#c3bdc5 15%,#a8a1ac);
+  height: 54px;
+  margin: 0 12px;
+  background: linear-gradient(#737077, #646168 18%, #4b4850);
   border: 1px solid #827a87;
   border-radius: 6px 6px 8px 8px;
-  box-shadow: inset 0 2px 2px #ddd7df,4px 8px 0 #6e626422;
+  box-shadow: inset 0 1px 1px #a29aa6, 3px 4px 0 #39343b26;
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  gap: 24px;
+  padding: 0 20px;
+  gap: 20px;
   position: relative;
   z-index: 1;
+  grid-column: 1;
+  grid-row: 2;
+  border-color: #3e3a43;
 }
 
 .deck-brand {
   font: italic bold 21px/.7 var(--sans);
   letter-spacing: -1px;
-  color: #63586e;
-  font-size: 29px;
+  color: #d5cedd;
+  font-size: 23px;
 }
 
 .deck-brand small {
@@ -423,36 +466,38 @@ svg {
   display: block;
   text-align: center;
   margin-top: 6px;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .disc-tray {
-  height: 44px;
+  height: 36px;
   width: 45%;
   border: 1px solid #8b8191;
   border-radius: 2px;
-  box-shadow: 0 1px 0 #d4cdd8,inset 0 1px 2px #8a7e8b40;
-  background: #b1a8b6;
+  box-shadow: inset 0 1px 2px #37323e66, 0 1px 0 #82788c;
+  background: #625d69;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 14px;
+  border-color: #3e3946;
 }
 
 .disc-tray span {
   font: 6px var(--mono);
   letter-spacing: .5px;
-  color: #65586f;
-  font-size: 11px;
+  color: #d8cede;
+  font-size: 10px;
 }
 
 .disc-tray b {
   font-size: 18px;
   font-weight: normal;
+  color: #d8cede;
 }
 
 .disc-tray:hover {
-  background: #c0b1d1;
+  background: #756480;
 }
 
 .deck-display {
@@ -462,7 +507,7 @@ svg {
   box-shadow: inset 0 1px 3px #171319;
   flex: 1;
   max-width: 210px;
-  padding: 9px 12px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -470,11 +515,12 @@ svg {
   font: 9px var(--mono);
   color: #c4d6af;
   text-shadow: 0 0 5px #bad0b04d;
-  font-size: 13px;
+  font-size: 11px;
+  border-color: #807286;
 }
 
 .deck-display small {
-  font-size: 10px;
+  font-size: 9px;
   color: #98b18f;
 }
 
@@ -502,35 +548,43 @@ svg {
 }
 
 .tv-feet {
-  height: 13px;
+  height: 8px;
   display: flex;
   justify-content: space-between;
-  margin: 0 55px;
+  margin: 0 45px;
+  grid-column: 1;
+  grid-row: 3;
 }
 
 .tv-feet i {
   width: 55px;
-  height: 10px;
+  height: 7px;
   border-radius: 0 0 5px 5px;
-  background: #817a86;
+  background: #343138;
 }
 
 .remote {
-  position: absolute;
+  position: relative;
   right: 20px;
   top: 230px;
-  width: 172px;
-  height: 400px;
+  width: 154px;
+  height: 360px;
   background: linear-gradient(115deg,#b4a0c7,#9b88af);
   border: 1px solid #8a789f;
   border-radius: 28px 28px 38px 38px;
-  transform: rotate(10deg);
+  transform: rotate(8deg);
   box-shadow: inset 2px 1px 2px #d7c6e6,6px 8px 0 #4c3e5b1c,10px 17px 22px #4f405c20;
-  padding: 20px 15px;
+  padding: 16px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 3;
+  grid-column: 2;
+  grid-row: 1 / 4;
+  inset: auto;
+  transform-origin: center;
+  align-self: center;
+  justify-self: center;
 }
 
 .remote-top {
@@ -559,18 +613,19 @@ svg {
 .remote-label {
   font: 5px var(--mono);
   letter-spacing: 1px;
-  margin: 18px 0 13px;
+  margin: 13px 0 9px;
   color: #55455f;
   font-size: 9px;
 }
 
 .remote-pad {
-  width: 132px;
-  height: 132px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   position: relative;
   background: #9582aa;
   box-shadow: inset 0 1px 2px #7c6991,0 1px 0 #c1afd2;
+  flex-shrink: 0;
 }
 
 .remote-pad button {
@@ -579,8 +634,8 @@ svg {
   background: none;
   color: #e8dff1;
   font: 9px var(--mono);
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   font-size: 14px;
 }
@@ -591,31 +646,31 @@ svg {
 
 .remote-pad .remote-up {
   top: 0;
-  left: 44px;
+  left: 40px;
 }
 
 .remote-pad .remote-down {
   bottom: 0;
-  left: 44px;
+  left: 40px;
 }
 
 .remote-pad .remote-left {
   left: 0;
-  top: 44px;
+  top: 40px;
 }
 
 .remote-pad .remote-right {
   right: 0;
-  top: 44px;
+  top: 40px;
 }
 
 .remote-pad .remote-ok {
-  top: 44px;
-  left: 44px;
+  top: 40px;
+  left: 40px;
   border-radius: 50%;
   background: #c4b5d4;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   color: #5a476b;
   box-shadow: 0 2px 2px #6c567c66;
   font-size: 12px;
@@ -628,7 +683,7 @@ svg {
   border-radius: 16px;
   font: 6px var(--mono);
   padding: 9px 22px;
-  margin: 15px 0 8px;
+  margin: 10px 0 6px;
   min-height: 44px;
   font-size: 11px;
 }
@@ -639,8 +694,8 @@ svg {
 }
 
 .remote-colors button {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 26px;
   border-radius: 9px;
   background: #d6a6b2;
   border: 1px solid #7e6d8b70;
@@ -808,14 +863,18 @@ svg {
   max-width: 1600px;
   display: flex;
   justify-content: space-between;
-  padding: 24px 32px;
+  padding: 0 24px;
   margin: auto;
   font: 7px var(--mono);
   letter-spacing: .8px;
   color: #887d8d;
-  font-size: 11px;
-  line-height: 1.7;
-  gap: 18px;
+  font-size: 9px;
+  line-height: 1;
+  gap: 16px;
+  flex-shrink: 0;
+  height: 34px;
+  width: 100%;
+  align-items: center;
 }
 
 .site-footer a:hover {
@@ -876,7 +935,7 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 86px 32px 60px;
+  padding: 48px 22px 16px;
   text-align: center;
   position: relative;
 }
@@ -896,11 +955,12 @@ svg {
 .profile-view h1 {
   font: normal 53px/1.1 var(--serif);
   letter-spacing: -2px;
-  margin: 0 0 13px;
+  margin: 0 0 24px;
   color: #f6eedc;
   text-shadow: 0 0 16px #f6eedc09;
-  font-size: clamp(58px, 5vw, 78px);
+  font-size: clamp(38px, 6vh, 62px);
   margin-bottom: 18px;
+  line-height: 1.1;
 }
 
 .profile-subtitle {
@@ -912,7 +972,7 @@ svg {
 .profiles {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 40px;
+  gap: 36px;
 }
 
 .profile {
@@ -923,12 +983,12 @@ svg {
   color: #f4eadb;
   padding: 0;
   border: 0;
-  width: 184px;
+  width: clamp(120px, 18vh, 174px);
 }
 
 .avatar {
-  width: 170px;
-  height: 170px;
+  width: clamp(100px, 16vh, 156px);
+  height: clamp(100px, 16vh, 156px);
   border-radius: 19px;
   background: #bacba9;
   display: grid;
@@ -940,8 +1000,8 @@ svg {
 }
 
 .avatar svg {
-  width: 138px;
-  height: 138px;
+  width: 80%;
+  height: 80%;
   overflow: visible;
 }
 
@@ -965,17 +1025,17 @@ svg {
 
 .profile-name {
   font: 13px var(--serif);
-  margin-top: 20px;
-  font-size: 25px;
+  margin-top: 14px;
+  font-size: 23px;
 }
 
 .profile-caption {
   font: 6px var(--mono);
   letter-spacing: 1px;
   color: #d1beda;
-  margin-top: 10px;
+  margin-top: 8px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .profile-arrow {
@@ -1005,9 +1065,9 @@ svg {
   border: 0;
   border-bottom: 1px solid #82718c;
   background: none;
-  margin-top: 38px;
+  margin-top: 22px;
   padding: 8px 4px;
-  font-size: 15px;
+  font-size: 14px;
   min-height: 44px;
 }
 
@@ -1041,6 +1101,7 @@ svg {
 .content-view {
   padding: 82px 42px 38px;
   min-height: 100%;
+  padding-top: 62px;
 }
 
 .menu-nav {
@@ -2180,7 +2241,7 @@ svg {
 
 .reading-mode .remote {
   position: absolute;
-  top: 230px;
+  top: auto;
 }
 
 .below-tv button.reading-toggle {
@@ -2252,7 +2313,8 @@ svg {
 }
 
 .reading-mode:not(.screensaver-active) .screen, .reading-mode:not(.screensaver-active) .screen-content {
-  min-height: 640px;
+  min-height: 560px;
+  height: auto;
 }
 
 .reading-mode .screen-footer button, .reading-mode .screen-footer a, .reading-mode .project a.project-link, .reading-mode .plain-nav {
@@ -2267,10 +2329,6 @@ svg {
   .setup {
     padding-right: 155px;
   }
-  .remote {
-    transform: rotate(7deg) scale(.85);
-    transform-origin: right top;
-  }
   .speaker {
     display: none;
   }
@@ -2279,23 +2337,6 @@ svg {
   }
   .viewer-badge {
     display: none;
-  }
-  .profiles {
-    gap: 24px;
-  }
-  .profile {
-    width: 154px;
-  }
-  .avatar {
-    width: 146px;
-    height: 146px;
-  }
-  .avatar svg {
-    width: 116px;
-    height: 116px;
-  }
-  .profile-name {
-    font-size: 23px;
   }
   .content-view {
     padding-left: 30px;
@@ -2338,31 +2379,11 @@ svg {
   .header-edition, .stage-heading .edition {
     display: none;
   }
-  .setup {
-    padding: 0;
-  }
   .remote {
     display: none;
   }
   .below-tv {
     padding-right: 0;
-  }
-  .screen {
-    height: 700px;
-  }
-  .profiles {
-    gap: 34px;
-  }
-  .profile {
-    width: 170px;
-  }
-  .avatar {
-    width: 160px;
-    height: 160px;
-  }
-  .avatar svg {
-    width: 130px;
-    height: 130px;
   }
   .home-grid {
     min-height: 360px;
@@ -2392,29 +2413,8 @@ svg {
 }
 
 @media (max-width: 700px) {
-  .site-header {
-    height: 94px;
-    padding: 0 18px;
-  }
-  .brand {
-    font-size: 11px;
-    gap: 15px;
-  }
   .brand b {
     font-size: 12px;
-  }
-  .brand-mark {
-    font-size: 48px;
-  }
-  .brand-mark span {
-    font-size: 24px;
-    right: -12px;
-  }
-  .header-link {
-    font-size: 15px;
-  }
-  .stage {
-    padding: 0 10px;
   }
   .stage-heading {
     padding: 21px 6px;
@@ -2424,30 +2424,8 @@ svg {
   .stage-heading p {
     font-size: 15px;
   }
-  .television {
-    padding: 12px 12px 0;
-    border-radius: 25px 25px 22px 22px;
-  }
-  .cabinet-top {
-    font-size: 8px;
-    padding: 2px 7px 10px;
-  }
   .cabinet-top span:last-child {
     font-size: 7px;
-  }
-  .screen-bezel {
-    padding: 8px;
-    border-radius: 22px 22px 34px 34px;
-  }
-  .screen {
-    height: 660px;
-    border-radius: 16px 16px 27px 27px;
-  }
-  .screen-osd {
-    top: 23px;
-    left: 23px;
-    right: 23px;
-    font-size: 15px;
   }
   .screen-osd > span:last-child {
     font-size: 10px;
@@ -2456,15 +2434,11 @@ svg {
   .osd-small {
     display: none;
   }
-  .profile-view {
-    padding: 78px 18px 42px;
-  }
   .profile-view > .eyebrow {
     font-size: 10px;
     margin-bottom: 25px;
   }
   .profile-view h1 {
-    font-size: 49px;
     letter-spacing: -1.5px;
   }
   .profile-subtitle {
@@ -2472,81 +2446,23 @@ svg {
     margin-bottom: 34px;
   }
   .profiles {
-    gap: 18px;
     width: 100%;
     max-width: 460px;
   }
   .profile {
-    width: auto;
     min-width: 0;
   }
   .avatar {
-    width: 112px;
-    height: 112px;
     border-radius: 15px;
   }
-  .avatar svg {
-    width: 90px;
-    height: 90px;
-  }
-  .profile-name {
-    font-size: 20px;
-    margin-top: 17px;
-  }
   .profile-caption {
-    font-size: 10px;
     letter-spacing: .4px;
-    margin-top: 9px;
-  }
-  .skip-profile {
-    margin-top: 36px;
-    font-size: 15px;
-  }
-  .tv-controls {
-    height: 96px;
-    gap: 12px;
-    padding: 0 6px;
-  }
-  .tv-wordmark {
-    font-size: 23px;
-  }
-  .tv-wordmark small {
-    font-size: 8px;
-  }
-  .physical-controls {
-    gap: 10px;
-  }
-  .hardware-button {
-    width: 54px;
-  }
-  .hardware-button small {
-    font-size: 9px;
-  }
-  .dvd-deck {
-    margin: 5px 7px 0;
-    height: 76px;
-    padding: 0 16px;
-    gap: 14px;
-  }
-  .deck-brand {
-    font-size: 24px;
   }
   .deck-brand small {
-    font-size: 8px;
     letter-spacing: 2px;
   }
   .disc-tray {
     padding: 0 8px;
-  }
-  .disc-tray span {
-    font-size: 9px;
-  }
-  .deck-display {
-    font-size: 11px;
-    padding: 7px 9px;
-  }
-  .deck-display small {
-    font-size: 8px;
   }
   .below-tv {
     padding: 20px 7px 24px;
@@ -2585,10 +2501,6 @@ svg {
   .intro-strip svg {
     width: 44px;
     height: 44px;
-  }
-  .site-footer {
-    padding: 20px 18px;
-    font-size: 10px;
   }
   .site-footer > span:nth-child(2) {
     display: none;
@@ -2800,9 +2712,6 @@ svg {
 }
 
 @media (max-width: 480px) {
-  .stage {
-    padding: 0 5px;
-  }
   .stage-heading {
     font-size: 9px;
     gap: 8px;
@@ -2811,96 +2720,32 @@ svg {
   .stage-heading p {
     font-size: 13px;
   }
-  .television {
-    padding: 10px 7px 0;
-  }
   .cabinet-top {
-    font-size: 7px;
     letter-spacing: .6px;
   }
   .cabinet-top span:last-child {
     font-size: 6px;
   }
-  .screen-bezel {
-    padding: 6px;
-  }
-  .screen {
-    height: 640px;
-  }
-  .screen-osd {
-    left: 18px;
-    right: 18px;
-    font-size: 14px;
-  }
   .screen-osd > span:last-child {
     font-size: 9px;
-  }
-  .profile-view {
-    padding: 78px 10px 45px;
-  }
-  .profile-view h1 {
-    font-size: 43px;
   }
   .profile-view > .eyebrow {
     font-size: 10px;
     letter-spacing: .9px;
   }
-  .profiles {
-    gap: 9px;
-  }
-  .avatar {
-    width: 91px;
-    height: 91px;
-  }
-  .avatar svg {
-    width: 75px;
-    height: 75px;
-  }
   .profile-name {
-    font-size: 18px;
     white-space: nowrap;
   }
   .profile-caption {
-    font-size: 10px;
     letter-spacing: .2px;
-  }
-  .tv-controls {
-    height: auto;
-    min-height: 132px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-    padding: 15px 4px;
-  }
-  .tv-wordmark {
-    text-align: center;
-    font-size: 24px;
-  }
-  .tv-wordmark small {
-    display: none;
   }
   .physical-controls {
     margin: 0;
-    gap: 15px;
-  }
-  .hardware-button {
-    width: 54px;
-    min-height: 62px;
-  }
-  .hardware-button small {
-    font-size: 9px;
-  }
-  .dvd-deck {
-    padding: 0 12px;
-    gap: 12px;
-    margin: 5px 6px 0;
   }
   .disc-tray {
     width: 47%;
   }
   .disc-tray span {
-    font-size: 8px;
     letter-spacing: .2px;
   }
   .deck-display small {
@@ -2952,26 +2797,6 @@ svg {
 }
 
 @media (max-width: 360px) {
-  .avatar {
-    width: 82px;
-    height: 82px;
-  }
-  .avatar svg {
-    width: 68px;
-    height: 68px;
-  }
-  .profile-name {
-    font-size: 17px;
-  }
-  .profile-view h1 {
-    font-size: 39px;
-  }
-  .header-link {
-    font-size: 14px;
-  }
-  .brand {
-    font-size: 10px;
-  }
   .brand b {
     font-size: 11px;
   }
@@ -2998,5 +2823,433 @@ svg {
   }
   .scanlines {
     display: none;
+  }
+}
+
+/* Keep the television and remote inside the available viewport. */
+
+.brand-name {
+  font-weight: 600;
+}
+
+.header-role {
+  color: #766b7d;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.profile-view > .eyebrow, .profile-subtitle {
+  display: none;
+}
+
+.footer-controls {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+}
+
+.site-footer button, .site-footer a {
+  background: none;
+  border: 0;
+  padding: 0;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  font: 10px var(--mono);
+  color: #766381;
+}
+
+.site-footer button:hover, .site-footer a:hover {
+  color: #40314e;
+  text-decoration: underline;
+}
+
+body.reading-mode {
+  height: auto;
+  min-height: 100svh;
+  overflow: auto;
+}
+
+.reading-mode .stage {
+  flex: none;
+}
+
+.reading-mode .setup {
+  height: auto;
+  grid-template-rows: auto 54px 8px;
+}
+
+.reading-mode.screensaver-active .setup {
+  height: calc(100svh - 92px);
+  grid-template-rows: minmax(0, 1fr) 54px 8px;
+}
+
+@media (max-width: 1200px) {
+  .header-edition {
+    display: block;
+  }
+  .setup {
+    grid-template-columns: minmax(0, 1fr) 164px;
+    column-gap: 12px;
+    padding: 0;
+  }
+  .remote {
+    display: flex;
+    width: 146px;
+    transform: rotate(6deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding: 0 16px;
+    gap: 20px;
+  }
+  .header-role {
+    display: none;
+  }
+  .stage {
+    padding: 6px 14px 0;
+  }
+  .setup {
+    grid-template-columns: minmax(0, 1fr) 130px;
+    column-gap: 8px;
+  }
+  .remote {
+    width: 132px;
+    height: 340px;
+    transform: rotate(4deg) scale(.94);
+  }
+  .remote-top {
+    padding: 0;
+  }
+  .profiles {
+    gap: 16px;
+  }
+  .profile {
+    width: 114px;
+  }
+  .avatar {
+    width: 108px;
+    height: 108px;
+  }
+  .profile-name {
+    font-size: 20px;
+  }
+  .profile-view h1 {
+    font-size: 44px;
+  }
+  .tv-wordmark {
+    font-size: 22px;
+  }
+  .tv-wordmark small {
+    display: none;
+  }
+  .hardware-button {
+    width: 52px;
+  }
+  .physical-controls {
+    gap: 8px;
+  }
+  .site-footer {
+    padding: 0 16px;
+  }
+  .footer-controls {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  .site-header {
+    height: 46px;
+    min-height: 46px;
+    padding: 0 12px;
+    gap: 16px;
+  }
+  .brand {
+    font-size: 12px;
+    gap: 9px;
+  }
+  .brand-mark {
+    font-size: 29px;
+  }
+  .brand-mark span {
+    font-size: 15px;
+    top: -5px;
+    right: -8px;
+  }
+  .header-edition {
+    font-size: 9px;
+    letter-spacing: .4px;
+  }
+  .header-link {
+    font-size: 13px;
+  }
+  .header-link span {
+    margin-left: 6px;
+  }
+  .stage {
+    padding: 5px 6px 0;
+  }
+  .setup {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) 50px 6px 60px;
+    gap: 4px 0;
+  }
+  .television {
+    grid-template-rows: 16px minmax(0, 1fr) 74px;
+    padding: 7px 8px 0;
+    border-radius: 22px 22px 18px 18px;
+  }
+  .cabinet-top {
+    font-size: 7px;
+    padding: 0 7px 4px;
+    line-height: 12px;
+  }
+  .cabinet-top span:last-child {
+    font-size: 6px;
+  }
+  .screen-bezel {
+    padding: 6px;
+    border-radius: 18px 18px 26px 26px;
+  }
+  .screen {
+    border-radius: 13px 13px 20px 20px;
+  }
+  .screen-osd {
+    top: 16px;
+    left: 18px;
+    right: 18px;
+    font-size: 14px;
+  }
+  .tv-controls {
+    height: 74px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 6px;
+  }
+  .tv-wordmark {
+    font-size: 19px;
+  }
+  .hardware-button {
+    width: 46px;
+    min-height: 56px;
+  }
+  .hardware-button > span {
+    width: 34px;
+    height: 26px;
+    font-size: 19px;
+  }
+  .hardware-button small {
+    font-size: 8px;
+  }
+  .physical-controls {
+    gap: 4px;
+  }
+  .power-button {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+  .power-led {
+    width: 4px;
+    height: 4px;
+  }
+  .dvd-deck {
+    height: 50px;
+    margin: 0 7px;
+    padding: 0 12px;
+    gap: 12px;
+  }
+  .deck-brand {
+    font-size: 22px;
+  }
+  .disc-tray {
+    height: 34px;
+  }
+  .disc-tray span {
+    font-size: 8px;
+  }
+  .deck-display {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+  .deck-display small {
+    display: none;
+  }
+  .tv-feet {
+    height: 6px;
+    margin: 0 34px;
+  }
+  .tv-feet i {
+    height: 6px;
+  }
+  .remote {
+    grid-column: 1;
+    grid-row: 4;
+    width: min(100% - 18px, 430px);
+    height: 56px;
+    padding: 5px 12px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transform: none;
+    border-radius: 18px;
+    box-shadow: inset 1px 1px 2px #d7c6e6, 3px 4px 0 #4c3e5b1c;
+  }
+  .remote-top {
+    width: auto;
+    padding: 0;
+  }
+  .remote-top > span {
+    font-size: 22px;
+  }
+  .remote-top i, .remote-label, .remote-bottom, .remote-colors, .remote-pad .remote-down {
+    display: none;
+  }
+  .remote-pad {
+    width: auto;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .remote-pad button, .remote-pad .remote-ok {
+    position: static;
+    width: 44px;
+    height: 44px;
+    font-size: 13px;
+  }
+  .remote-menu {
+    padding: 5px 10px;
+    margin: 0;
+    min-height: 38px;
+    font-size: 10px;
+  }
+  .profile-view {
+    padding: 44px 10px 12px;
+  }
+  .profile-view h1 {
+    font-size: 41px;
+    margin-bottom: 22px;
+  }
+  .profiles {
+    max-width: 380px;
+    gap: 9px;
+  }
+  .profile {
+    width: auto;
+  }
+  .avatar {
+    width: 91px;
+    height: 91px;
+  }
+  .profile-name {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+  .profile-caption {
+    font-size: 10px;
+    margin-top: 7px;
+  }
+  .skip-profile {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  .site-footer {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 8px;
+  }
+  .footer-controls {
+    gap: 14px;
+  }
+  .site-footer button, .site-footer a {
+    font-size: 9px;
+  }
+  .site-footer > span {
+    display: none;
+  }
+  .footer-controls {
+    margin: 0 auto;
+  }
+  .content-view {
+    padding-top: 56px;
+  }
+  .reading-mode .setup {
+    grid-template-rows: auto 50px 6px 60px;
+  }
+  .reading-mode.screensaver-active .setup {
+    height: calc(100svh - 83px);
+    grid-template-rows: minmax(0, 1fr) 50px 6px 60px;
+  }
+}
+
+@media (max-height: 800px) {
+  .profile-caption {
+    display: none;
+  }
+  .profile-view {
+    padding-top: 44px;
+    padding-bottom: 10px;
+  }
+  .profile-view h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+  .avatar {
+    width: clamp(80px, 14vh, 116px);
+    height: clamp(80px, 14vh, 116px);
+  }
+  .profile-name {
+    margin-top: 10px;
+  }
+  .skip-profile {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header {
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .brand {
+    font-size: 11px;
+  }
+  .header-edition {
+    font-size: 8px;
+  }
+  .header-link {
+    font-size: 12px;
+  }
+  .tv-wordmark {
+    font-size: 17px;
+  }
+  .hardware-button {
+    width: 42px;
+  }
+  .tv-controls {
+    padding: 0 4px;
+    gap: 6px;
+  }
+  .avatar {
+    width: 82px;
+    height: 82px;
+  }
+  .profile-name {
+    font-size: 17px;
+  }
+  .profile-view h1 {
+    font-size: 37px;
+  }
+  .remote {
+    gap: 6px;
+    padding: 5px 8px;
   }
 }

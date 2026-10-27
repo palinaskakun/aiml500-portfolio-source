@@ -27,3 +27,12 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Main physical controls use 44px or larger targets.
 - Replaced the professor display name with Dr. Collins and removed the extra conversational slogans throughout the interface.
 - Checked the five content routes and Dr. Collins’s coursework action. No horizontal page overflow in the final desktop and phone checks; no browser console errors.
+
+## Compact header and charcoal frame
+
+- Consolidated branding, portfolio edition, role, and About link into a 46–50px header.
+- Changed the TV cabinet and DVD deck to charcoal gray.
+- Switched the TV assembly to a viewport-sized grid; retained the larger content typography and scrollable chapters.
+- Verified no page overflow and a fully visible remote at 1309×818, 1163×654, 372×895, and 354×672 browser viewports. The profile chooser fits inside the screen at these sizes.
+- On phones, the remote is displayed horizontally below the DVD deck.
+- Verified the footer screensaver control and return action after moving the controls into the compact footer.
