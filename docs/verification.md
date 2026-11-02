@@ -83,3 +83,11 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Added the gold reflection chapter inside the TV with five exit links. Verified the entry appears only for Dr. Collins and other profiles cannot render the reflection route.
 - Made the title uppercase and upright, enlarged Photos Cleaner while preserving its full image, and shortened the README.
 - Verified navigation, profile visibility, title styling, photo dimensions, and 390px layout without horizontal overflow in the browser. Syntax, static build, stylesheet parsing, and whitespace checks passed.
+
+## Artifact 2: AI & ML timeline — November 1, 2026
+
+- Inspected the publicly viewable 11-slide group presentation, team credits, references, and AI-use disclosure. Preserved the supplied PNG and added an unmodified PDF export for public access without Google Slides.
+- Added a second coursework disc and a dedicated timeline route while keeping the existing Artifact 1 URL, report, and reflection intact. Added all required artifact information, team attribution, and Palina’s confirmed research/presentation work on Turing and ELIZA.
+- Added a dated, selectable-text reading companion and linked the original references. The 2026 mathematics summary includes the Harvard evaluation’s limitations rather than treating benchmark performance as universal capability.
+- Confirmed both artifact tabs, active Coursework navigation, image loading, reading mode, and a 390px layout without page or screen-content horizontal overflow. Syntax, static build, and whitespace checks passed.
+- Artifact 2’s personal reflection remains for Palina to write; no personal lessons or reviewer feedback were fabricated. Submission should include the portfolio URL with both artifacts.

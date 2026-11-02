@@ -1,11 +1,12 @@
 import { advanceAxis } from './lib/bounce.js';
 import { reflection } from './lib/reflection.js';
+import { timelineSlidesUrl, timelineMilestones, timelineReferences, timelineTeam } from './lib/timeline.js';
 
 const $ = (selector) => document.querySelector(selector);
 const content = $('#screen-content');
 const screen = $('#screen');
 const routes = ['home', 'about', 'artifacts', 'bonus', 'contact'];
-const routeNames = { profiles: 'HELLO', home: 'MENU', about: 'ABOUT', artifacts: 'LAB 01', reflection: 'REFLECT', bonus: 'BONUS', contact: 'SAY HI', screensaver: 'DVD' };
+const routeNames = { profiles: 'HELLO', home: 'MENU', about: 'ABOUT', artifacts: 'LAB 01', timeline: 'HISTORY', reflection: 'REFLECT', bonus: 'BONUS', contact: 'SAY HI', screensaver: 'DVD' };
 const storage = {
   get(key) { try { return localStorage.getItem(`phv-${key}`); } catch { return null; } },
   set(key, value) { try { localStorage.setItem(`phv-${key}`, value); } catch { /* Preferences are optional. */ } },
@@ -37,6 +38,7 @@ const viewerNames = { professor: 'DR. COLLINS', recruiter: 'RECRUITER', curious:
 const nav = (active) => `<nav class="menu-nav" aria-label="DVD chapters">${routes.map((item, i) => `<a href="#${item}" ${active === item ? 'aria-current="page"' : ''}><span>0${i + 1}</span>${({ home: 'MAIN MENU', about: 'ABOUT ME', artifacts: 'COURSEWORK', bonus: 'PROJECTS', contact: 'CONTACT' })[item]}</a>`).join('')}<button class="viewer-badge" data-route="profiles" aria-label="Change viewer, currently ${viewerNames[audience]}">${viewerNames[audience]} ▾</button></nav>`;
 const footer = () => `<div class="screen-footer"><button data-reading-mode aria-pressed="${readingMode}">${readingMode ? '▣ DVD VIEW' : 'Aa READING VIEW'}</button><a href="#profiles">⏏ CHANGE VIEWER</a></div>`;
 const wrap = (active, html) => `<section class="content-view ${active}-view">${nav(active)}${html}${footer()}</section>`;
+const courseworkMenu = active => `<nav class="coursework-menu" aria-label="Course artifacts"><a href="#artifacts" ${active === 'artifacts' ? 'aria-current="page"' : ''}><span>DISC 01</span><strong>Boredom Buster AI</strong><small>CHATBOT PROTOTYPING</small></a><a href="#timeline" ${active === 'timeline' ? 'aria-current="page"' : ''}><span>DISC 02</span><strong>AI & ML Timeline</strong><small>RESEARCH & VISUAL COMMUNICATION</small></a></nav>`;
 const escapeHtml = text => text.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 
 function profileView() {
@@ -51,7 +53,7 @@ function homeView() {
   const path = audience === 'professor' ? 'artifacts' : audience === 'recruiter' ? 'bonus' : 'about';
   const label = audience === 'professor' ? 'PLAY ARTIFACT 01' : audience === 'recruiter' ? 'EXPLORE PROJECTS' : 'PLAY INTRO';
   const intro = audience === 'professor' ? 'My AIML-500 portfolio documents my coursework and progress in AI and machine learning.' : audience === 'recruiter' ? 'I build web, mobile, and backend applications, with experience in scientific computing and a growing focus on AI and machine learning.' : 'I’m a software engineer based in Dearborn, Michigan, studying AI and machine learning at Indiana Wesleyan University.';
-  return wrap('home', `<div class="home-grid dvd-title-menu"><div class="home-copy"><span class="eyebrow">PALINASONIC PRESENTS / VOL. 01</span><h1 id="page-title">NOW PLAYING.<br />PALINA SKAKUN</h1><p>${intro}</p><a class="screen-button" href="#${path}"><span aria-hidden="true">▶</span> ${label}</a></div><div class="portrait-composition dvd-case-composition"><div class="portfolio-disc" aria-hidden="true"><span>DVD</span></div><div class="portrait-frame dvd-case"><div class="dvd-case-top"><span>DVD VIDEO</span></div><img src="./assets/palina.webp" alt="Palina smiling at her Michigan State graduation, beneath pink blossoms" width="400" height="400" /><div class="dvd-case-caption"><strong>PALINA SKAKUN</strong><span>THE PORTFOLIO · VOL. 01</span></div></div><div class="portrait-flower"></div></div></div><h2 class="chapter-selection-title">CHAPTER SELECTION</h2><div class="home-bottom"><a href="#artifacts"><span class="chapter-number">01</span><span>Coursework<small>AIML-500 • WORKSHOP 1</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a><a href="#bonus"><span class="chapter-number">02</span><span>Selected projects<small>WEB, MOBILE & EXPERIMENTS</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a></div>`);
+  return wrap('home', `<div class="home-grid dvd-title-menu"><div class="home-copy"><span class="eyebrow">PALINASONIC PRESENTS / VOL. 01</span><h1 id="page-title">NOW PLAYING.<br />PALINA SKAKUN</h1><p>${intro}</p><a class="screen-button" href="#${path}"><span aria-hidden="true">▶</span> ${label}</a></div><div class="portrait-composition dvd-case-composition"><div class="portfolio-disc" aria-hidden="true"><span>DVD</span></div><div class="portrait-frame dvd-case"><div class="dvd-case-top"><span>DVD VIDEO</span></div><img src="./assets/palina.webp" alt="Palina smiling at her Michigan State graduation, beneath pink blossoms" width="400" height="400" /><div class="dvd-case-caption"><strong>PALINA SKAKUN</strong><span>THE PORTFOLIO · VOL. 01</span></div></div><div class="portrait-flower"></div></div></div><h2 class="chapter-selection-title">CHAPTER SELECTION</h2><div class="home-bottom"><a href="#artifacts"><span class="chapter-number">01</span><span>Coursework<small>AIML-500 • ARTIFACTS 01 & 02</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a><a href="#bonus"><span class="chapter-number">02</span><span>Selected projects<small>WEB, MOBILE & EXPERIMENTS</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a></div>`);
 }
 
 function aboutView() {
@@ -66,6 +68,7 @@ function aboutView() {
 function artifactView() {
   const team = ['Akshaya Sree Baskaran', 'Dalong Chen', 'Pranay Kumar Mesa', 'Vishal Krishna Sirigiri', 'Palina Skakun', 'Unaiera Syed', 'Renfang Xu', 'Zijun Yu'];
   return wrap('artifacts', `
+    ${courseworkMenu('artifacts')}
     <header class="page-heading">
       <span class="eyebrow">ARTIFACT 01 / AIML-500 / WORKSHOP 1.4</span>
       <h1 id="page-title">Boredom Buster AI.</h1>
@@ -141,7 +144,68 @@ function artifactView() {
       </div></details>
     </div>
     <h2 class="section-title">FUTURE COURSE ARTIFACTS</h2>
-    <div class="coming-slots">${[2, 3, 4, 5].map(n => `<div><b>0${n}</b><span>FUTURE COURSE ARTIFACT</span></div>`).join('')}</div>
+    <div class="coming-slots">${[3, 4, 5].map(n => `<div><b>0${n}</b><span>FUTURE COURSE ARTIFACT</span></div>`).join('')}</div>
+  `);
+}
+
+
+function timelineView() {
+  return wrap('artifacts', `
+    ${courseworkMenu('timeline')}
+    <header class="page-heading">
+      <span class="eyebrow">ARTIFACT 02 / AIML-500 / TEAM 1</span>
+      <h1 id="page-title">AI & ML. On rewind.</h1>
+      <p>A group timeline of the ideas, setbacks, and breakthroughs behind today’s AI. Research and visual storytelling take the lead on this disc.</p>
+    </header>
+    <article class="artifact-feature">
+      <div class="artifact-cover timeline-cover"><small>PALINASONIC<br />AIML-500 / DISC 02</small><h2>AI & ML<br />On rewind.</h2><span class="rewind-mark" aria-hidden="true">◀◀</span><span>1950 — 2026 / TEAM 1</span></div>
+      <div class="artifact-summary">
+        <span class="inline-tag artifact-published">RESEARCH & VISUAL COMMUNICATION · TEAM PROJECT</span>
+        <h2>The backstory matters.</h2>
+        <p>This artifact collects major AI and machine-learning milestones into a chronological visual and an 11-slide group presentation. It puts technical advances alongside the funding, hardware, and practical limits that shaped them.</p>
+        <p>Artifact 1 shows chatbot prototyping. This entry shows a different skill: organizing research into an explanation that someone new to the field can follow.</p>
+        <div class="artifact-actions"><a class="screen-button" href="${timelineSlidesUrl}" target="_blank" rel="noopener noreferrer">OPEN GROUP SLIDES ↗</a><a class="screen-button secondary" href="./assets/artifacts/ai-ml-timeline-slides.pdf" target="_blank" rel="noopener noreferrer">SLIDES · PDF ↗</a><a class="screen-button secondary" href="./assets/artifacts/ai-ml-timeline.png" target="_blank" rel="noopener noreferrer">FULL-SIZE TIMELINE ↗</a></div>
+      </div>
+    </article>
+    <section class="timeline-evidence" aria-labelledby="timeline-image-title">
+      <h2 id="timeline-image-title" class="section-title">THE ORIGINAL TIMELINE</h2>
+      <p>The original group visual. Open it at full size to read the original descriptions. A text version follows below.</p>
+      <figure id="timeline-image"><a href="./assets/artifacts/ai-ml-timeline.png" target="_blank" rel="noopener noreferrer" aria-label="Open original AI and ML timeline at full size"><img src="./assets/artifacts/ai-ml-timeline.png" alt="Team 1’s chronological AI and ML timeline, covering Turing, Dartmouth, ELIZA, the AI winters, neural networks, cloud infrastructure, and modern AI. The dated reading version is below." width="4609" height="2423" /></a><figcaption>Team 1 · AI & ML Timeline · <a class="text-link" href="./assets/artifacts/ai-ml-timeline.png" download>DOWNLOAD ORIGINAL PNG ↓</a></figcaption></figure>
+    </section>
+    <div class="artifact-details">
+      <details open><summary>01 / Introduction & description</summary><div>
+        <p><strong>Intended audience:</strong> students and readers new to AI who want the historical context behind the tools they use today.</p>
+        <p>The group deliverables pair a detailed timeline with a presentation covering AI’s development from 1950 through 2026. The timeline includes both successes and AI winters, rather than presenting progress as one uninterrupted series of breakthroughs.</p>
+        <p>For the portfolio, I added a short introduction, a dated reading companion, direct downloads, and source links. Readers can choose a quick overview or explore the original group work in more detail.</p>
+      </div></details>
+      <details><summary>02 / Objective</summary><div>
+        <p>Explain how AI and ML developed over time by selecting important events, putting them in order, and describing why they mattered. Connect changes in algorithms with computing resources, real-world applications, and periods when expectations exceeded results.</p>
+      </div></details>
+      <details><summary>03 / Process & collaboration</summary><div>
+        <ol class="artifact-process"><li><strong>Organize the history.</strong> The group assembled milestones spanning early machine intelligence, rule-based systems, neural networks, and recent generative AI.</li><li><strong>Add context.</strong> Descriptions explain the significance of each event and include sources for further reading.</li><li><strong>Present the research.</strong> The work was arranged in a detailed visual timeline and a Google Slides presentation, with team credits and references.</li><li><strong>Adapt for this audience.</strong> This portfolio version adds larger, selectable text and easy access to the original image and slide deck.</li></ol>
+        <p><strong>Attribution:</strong> this is a collaborative Team 1 artifact. The original presentation names all eight contributors; the historical research and group deliverables are credited to the team.</p>
+        <p><strong>My contribution:</strong> we shared the research across the group. I specifically researched and presented the Turing proposal and ELIZA sections.</p>
+      </div></details>
+      <details><summary>04 / Tools & technologies</summary><div>
+        <dl class="artifact-tools"><div><dt>Google Slides</dt><dd>Group presentation, chronological overview, credits, and references.</dd></div><div><dt>Lucidchart</dt><dd>Detailed visual timeline, identified in the group presentation.</dd></div><div><dt>Research sources</dt><dd>Research publications, institutional histories, and explanatory articles listed in the presentation.</dd></div><div><dt>ChatGPT</dt><dd>The group discloses assistance with researching recent developments, summarizing information, and improving the clarity of descriptions, with team review and content selection.</dd></div></dl>
+      </div></details>
+      <details><summary>05 / Artifact value proposition</summary><div>
+        <h3>Unique value</h3><p>The timeline connects technical milestones with setbacks and infrastructure changes. It gives new learners a way to understand how the field developed, rather than memorizing isolated product names and dates.</p>
+        <h3>Relevance to the audience</h3><p>The visual overview, reading companion, and original sources offer several ways into the same subject. This supports my broader goal of making complicated technology approachable through clear explanations and usable resources.</p>
+      </div></details>
+      <details open><summary>06 / Read the timeline</summary><div>
+        <p>A concise reading companion adapted from the group timeline. The original PNG and slide deck retain the full wording and citations.</p>
+        <ol class="timeline-milestones">${timelineMilestones.map(([year, title, description]) => `<li><span class="timeline-year">${escapeHtml(year)}</span><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p></div></li>`).join('')}</ol>
+        <p><strong>Reading recent claims carefully:</strong> solving a benchmark problem does not establish reliable performance across all research mathematics. The October 2026 report also describes weaknesses in explanations and attribution. <a class="text-link" href="https://current.fas.harvard.edu/stories/top-mathematicians-grade-ais-ability-solve-toughest-problems" target="_blank" rel="noopener noreferrer">Read the evaluation context ↗</a></p>
+      </div></details>
+      <details><summary>07 / Team credits & references</summary><div>
+        <h3>Team 1</h3><ul class="team-credits">${timelineTeam.map(name => `<li>${escapeHtml(name)}</li>`).join('')}</ul>
+        <p>Team 1. (2026). <em>AI & ML Timeline</em> [Group timeline and presentation]. AIML-500, Indiana Wesleyan University. <a class="text-link" href="${timelineSlidesUrl}" target="_blank" rel="noopener noreferrer">Original presentation ↗</a>. Slides 8–10 contain the group’s reference list; slide 11 contains its AI-use disclosure.</p>
+        <h3>Sources listed in the presentation</h3><ul class="timeline-references">${timelineReferences.map(([label, url]) => `<li><a class="text-link" href="${url}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} ↗</a></li>`).join('')}</ul>
+        <p>The presentation credits its template to Slidesgo, icons to Flaticon, and infographics and images to Freepik. Those credits remain in the downloadable slide copy.</p>
+      </div></details>
+    </div>
+    <div class="plain-nav"><a href="#artifacts">↵ ARTIFACT 01: BOREDOM BUSTER AI</a><a href="#about">ABOUT ME ↗</a></div>
   `);
 }
 
@@ -252,9 +316,9 @@ function updateScrollHint() {
 
 function render(target, focus = true) {
   resetPowerTransition();
-  const requested = [...routes, 'profiles', 'screensaver', 'reflection'].includes(target) ? target : 'profiles';
+  const requested = [...routes, 'profiles', 'screensaver', 'reflection', 'timeline'].includes(target) ? target : 'profiles';
   const valid = requested === 'reflection' && audience !== 'professor' ? 'artifacts' : requested;
-  const activeChapter = valid === 'reflection' ? 'artifacts' : valid;
+  const activeChapter = ['reflection', 'timeline'].includes(valid) ? 'artifacts' : valid;
   if (valid !== 'screensaver') previousRoute = valid;
   route = valid;
   document.querySelectorAll('.header-nav a').forEach(link => {
@@ -268,13 +332,13 @@ function render(target, focus = true) {
   powered = true;
   $('#television').classList.remove('powered-off');
   updatePowerControls();
-  const views = { profiles: profileView, home: homeView, about: aboutView, artifacts: artifactView, reflection: reflectionView, bonus: bonusView, contact: contactView, screensaver: saverView };
+  const views = { profiles: profileView, home: homeView, about: aboutView, artifacts: artifactView, timeline: timelineView, reflection: reflectionView, bonus: bonusView, contact: contactView, screensaver: saverView };
   content.innerHTML = views[valid]();
   content.scrollTop = 0;
   $('#channel-label').innerHTML = `${valid === 'screensaver' ? 'DVD' : 'AV 1'} <span class="osd-small">STEREO</span>`;
-  $('#osd-right').textContent = valid === 'profiles' ? 'DVD / PORTFOLIO' : valid === 'screensaver' ? 'DVD SCREENSAVER' : valid === 'reflection' ? 'REFLECTION' : `CH ${String(routes.indexOf(valid) + 1).padStart(2, '0')} / ${routeNames[valid]}`;
+  $('#osd-right').textContent = valid === 'profiles' ? 'DVD / PORTFOLIO' : valid === 'screensaver' ? 'DVD SCREENSAVER' : valid === 'reflection' ? 'REFLECTION' : `CH ${String(routes.indexOf(activeChapter) + 1).padStart(2, '0')} / ${routeNames[valid]}`;
   $('#deck-status').textContent = routeNames[valid];
-  document.title = `${({profiles:'Choose your channel',home:'Main menu',about:'About Palina',artifacts:'Boredom Buster AI · Artifact 1',reflection:'Artifact 1 · My reflection',bonus:'Selected projects',contact:'Contact',screensaver:'Waiting for the corner'})[valid]} — Palina Skakun · Palinasonic`;
+  document.title = `${({profiles:'Choose your channel',home:'Main menu',about:'About Palina',artifacts:'Boredom Buster AI · Artifact 1',timeline:'AI & ML Timeline · Artifact 2',reflection:'Artifact 1 · My reflection',bonus:'Selected projects',contact:'Contact',screensaver:'Waiting for the corner'})[valid]} — Palina Skakun · Palinasonic`;
   if (!motionPaused && focus) {
     clearTimeout(transitionTimer);
     screen.classList.remove('channel-changing');
@@ -433,7 +497,7 @@ document.addEventListener('click', async (event) => {
     else if (action === 'menu') navigate('profiles');
     else if (action === 'back') navigate(route === 'profiles' ? 'home' : 'profiles');
     else {
-      const index = routes.indexOf(route);
+      const index = routes.indexOf(route === 'timeline' || route === 'reflection' ? 'artifacts' : route);
       navigate(index < 0 ? (action === 'previous' ? 'contact' : 'home') : routes[(index + (action === 'previous' ? -1 : 1) + routes.length) % routes.length]);
     }
   }
