@@ -107,3 +107,9 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Preserved Palina’s supplied three-paragraph reflection and AI-use disclosure verbatim on a gold reflection page linked only in the Dr. Collins view. Verified all five chapter exits. Guest views omit the link and resolve a direct reflection route to Artifact 4.
 - Verified four-disc navigation, active Coursework state, three scenario evidence sections, exact reflection wording, reading mode, and 390px layouts without page or TV-content horizontal overflow.
 - Syntax, static build, and whitespace checks passed. The evidence-text asset is generated from the same scenario data shown on the page.
+
+## Remove conversation links — November 11, 2026
+
+- Removed the original-chat action, linked citation, and source URL from Artifact 4 and its downloadable evidence notes. Updated surrounding text so it no longer directs readers to an external conversation.
+- Scanned the full static build, including PDF annotations/text and DOCX XML/relationships: no ChatGPT conversation URLs remain in deployed files. Reflections and AI-use disclosures are preserved.
+- Syntax, static build, and whitespace checks passed.

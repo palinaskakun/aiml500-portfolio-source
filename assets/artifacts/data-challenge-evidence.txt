@@ -1,9 +1,7 @@
 DATA CHALLENGE SCENARIOS — PORTFOLIO EVIDENCE NOTES
 Palina Skakun · AIML-500 · Assignment 4.3
 
-Source: https://chatgpt.com/share/6af4e594-df90-83e9-8ba9-17998776a07e
-
-These notes are a portfolio reading companion, not a verbatim transcript or instructor assessment. See the source for the full conversation. All scenarios are fictional; no models were trained or measured.
+These notes are a portfolio reading companion, not a verbatim transcript or instructor assessment. All scenarios are fictional; no models were trained or measured.
 
 SCENARIO 1: ReviewPulse / data quality
 A fictional sentiment-model team wants to train on customer reviews containing duplicates, suspected bots, inconsistent formats, and potentially misleading star-rating labels.
