@@ -4587,3 +4587,18 @@ body.reading-mode.screensaver-active {
   .model-comparison-table { min-width: 560px; font-size: 16px; }
   .model-comparison-table th, .model-comparison-table td { padding: 12px; }
 }
+
+/* Disc 04: scenario evidence and the supplied reflection. */
+.coursework-menu { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.data-challenge-cover { background: #b6cad1; color: #302f3b; }
+.data-challenge-mark { font: 28px/1.6 var(--mono); margin: 24px 0; }
+.scenario-evidence article { padding: 28px 0; border-top: 1px solid #796681; }
+.scenario-evidence blockquote { margin: 24px 0; padding: 18px 22px; border-left: 3px solid #c9b5d8; background: #c3aed417; }
+.scenario-evidence blockquote p { margin: 0 0 12px; font-style: italic; font-size: 22px; }
+.scenario-evidence cite { font: 16px/1.6 var(--mono); }
+@media (max-width: 1100px) { .coursework-menu { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 650px) {
+  .coursework-menu { grid-template-columns: 1fr; }
+  .scenario-evidence blockquote { padding: 14px; }
+  .scenario-evidence blockquote p { font-size: 20px; }
+}

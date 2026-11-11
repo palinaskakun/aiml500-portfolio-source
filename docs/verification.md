@@ -99,3 +99,11 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Added a comparison table for housing regression and cassava image classification. Verified the cited studies; included transfer-learning nuance without changing the submitted document.
 - Verified all three disc links, active Coursework navigation, seven required detail sections, reading mode, and a 390px viewport. The table scrolls within its own region, with no page or TV-content horizontal overflow.
 - Syntax, static build, source-document byte comparison, and whitespace checks passed. Artifact 3 reflection was requested for the Brightspace submission box and is delivered separately for Palina to review; no reviewer feedback was invented.
+
+## Artifact 4: Data Challenge Scenarios — November 11, 2026
+
+- Read the supplied public conversation through the browser, including all three scenarios, Palina’s responses, coaching explanations, and the concluding AI-generated practice summary.
+- Added Disc 04, required artifact information, three evidence sections, the original conversation link, and a downloadable plain-text reading companion. Separated Palina’s initial ideas from suggestions or explanations supplied by the coach; no implemented cleaning/model results or instructor grades are claimed.
+- Preserved Palina’s supplied three-paragraph reflection and AI-use disclosure verbatim on a gold reflection page linked only in the Dr. Collins view. Verified all five chapter exits. Guest views omit the link and resolve a direct reflection route to Artifact 4.
+- Verified four-disc navigation, active Coursework state, three scenario evidence sections, exact reflection wording, reading mode, and 390px layouts without page or TV-content horizontal overflow.
+- Syntax, static build, and whitespace checks passed. The evidence-text asset is generated from the same scenario data shown on the page.
