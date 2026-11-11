@@ -91,3 +91,11 @@ The preview is local, not an instructor-ready public URL. No hosted deployment o
 - Added a dated, selectable-text reading companion and linked the original references. The 2026 mathematics summary includes the Harvard evaluation’s limitations rather than treating benchmark performance as universal capability.
 - Confirmed both artifact tabs, active Coursework navigation, image loading, reading mode, and a 390px layout without page or screen-content horizontal overflow. Syntax, static build, and whitespace checks passed.
 - Artifact 2’s personal reflection remains for Palina to write; no personal lessons or reviewer feedback were fabricated. Submission should include the portfolio URL with both artifacts.
+
+## Artifact 3: Machine Learning vs. Deep Learning — November 10, 2026
+
+- Added the final submitted individual paper as a third coursework disc at #model-choice. Preserved the supplied DOCX byte-for-byte and produced a four-page PDF reading copy; visually inspected all four rendered pages.
+- Added the required introduction/description, objective, process, tools, value proposition, references, and attribution. The page distinguishes Palina’s written comparison from the researchers’ models and experiments.
+- Added a comparison table for housing regression and cassava image classification. Verified the cited studies; included transfer-learning nuance without changing the submitted document.
+- Verified all three disc links, active Coursework navigation, seven required detail sections, reading mode, and a 390px viewport. The table scrolls within its own region, with no page or TV-content horizontal overflow.
+- Syntax, static build, source-document byte comparison, and whitespace checks passed. Artifact 3 reflection was requested for the Brightspace submission box and is delivered separately for Palina to review; no reviewer feedback was invented.

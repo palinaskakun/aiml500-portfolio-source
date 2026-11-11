@@ -1,12 +1,13 @@
 import { advanceAxis } from './lib/bounce.js';
 import { reflection } from './lib/reflection.js';
+import { modelChoiceContent } from './lib/model-choice.js';
 import { timelineSlidesUrl, timelineMilestones, timelineReferences, timelineTeam } from './lib/timeline.js';
 
 const $ = (selector) => document.querySelector(selector);
 const content = $('#screen-content');
 const screen = $('#screen');
 const routes = ['home', 'about', 'artifacts', 'bonus', 'contact'];
-const routeNames = { profiles: 'HELLO', home: 'MENU', about: 'ABOUT', artifacts: 'LAB 01', timeline: 'HISTORY', reflection: 'REFLECT', bonus: 'BONUS', contact: 'SAY HI', screensaver: 'DVD' };
+const routeNames = { profiles: 'HELLO', home: 'MENU', about: 'ABOUT', artifacts: 'LAB 01', timeline: 'HISTORY', 'model-choice': 'MODELS', reflection: 'REFLECT', bonus: 'BONUS', contact: 'SAY HI', screensaver: 'DVD' };
 const storage = {
   get(key) { try { return localStorage.getItem(`phv-${key}`); } catch { return null; } },
   set(key, value) { try { localStorage.setItem(`phv-${key}`, value); } catch { /* Preferences are optional. */ } },
@@ -38,7 +39,7 @@ const viewerNames = { professor: 'DR. COLLINS', recruiter: 'RECRUITER', curious:
 const nav = (active) => `<nav class="menu-nav" aria-label="DVD chapters">${routes.map((item, i) => `<a href="#${item}" ${active === item ? 'aria-current="page"' : ''}><span>0${i + 1}</span>${({ home: 'MAIN MENU', about: 'ABOUT ME', artifacts: 'COURSEWORK', bonus: 'PROJECTS', contact: 'CONTACT' })[item]}</a>`).join('')}<button class="viewer-badge" data-route="profiles" aria-label="Change viewer, currently ${viewerNames[audience]}">${viewerNames[audience]} ▾</button></nav>`;
 const footer = () => `<div class="screen-footer"><button data-reading-mode aria-pressed="${readingMode}">${readingMode ? '▣ DVD VIEW' : 'Aa READING VIEW'}</button><a href="#profiles">⏏ CHANGE VIEWER</a></div>`;
 const wrap = (active, html) => `<section class="content-view ${active}-view">${nav(active)}${html}${footer()}</section>`;
-const courseworkMenu = active => `<nav class="coursework-menu" aria-label="Course artifacts"><a href="#artifacts" ${active === 'artifacts' ? 'aria-current="page"' : ''}><span>DISC 01</span><strong>Boredom Buster AI</strong><small>CHATBOT PROTOTYPING</small></a><a href="#timeline" ${active === 'timeline' ? 'aria-current="page"' : ''}><span>DISC 02</span><strong>AI & ML Timeline</strong><small>RESEARCH & VISUAL COMMUNICATION</small></a></nav>`;
+const courseworkMenu = active => `<nav class="coursework-menu" aria-label="Course artifacts"><a href="#artifacts" ${active === 'artifacts' ? 'aria-current="page"' : ''}><span>DISC 01</span><strong>Boredom Buster AI</strong><small>CHATBOT PROTOTYPING</small></a><a href="#timeline" ${active === 'timeline' ? 'aria-current="page"' : ''}><span>DISC 02</span><strong>AI & ML Timeline</strong><small>RESEARCH & VISUAL COMMUNICATION</small></a><a href="#model-choice" ${active === 'model-choice' ? 'aria-current="page"' : ''}><span>DISC 03</span><strong>ML vs. Deep Learning</strong><small>COMPARING APPROACHES</small></a></nav>`;
 const escapeHtml = text => text.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 
 function profileView() {
@@ -53,7 +54,7 @@ function homeView() {
   const path = audience === 'professor' ? 'artifacts' : audience === 'recruiter' ? 'bonus' : 'about';
   const label = audience === 'professor' ? 'PLAY ARTIFACT 01' : audience === 'recruiter' ? 'EXPLORE PROJECTS' : 'PLAY INTRO';
   const intro = audience === 'professor' ? 'My AIML-500 portfolio documents my coursework and progress in AI and machine learning.' : audience === 'recruiter' ? 'I build web, mobile, and backend applications, with experience in scientific computing and a growing focus on AI and machine learning.' : 'I’m a software engineer based in Dearborn, Michigan, studying AI and machine learning at Indiana Wesleyan University.';
-  return wrap('home', `<div class="home-grid dvd-title-menu"><div class="home-copy"><span class="eyebrow">PALINASONIC PRESENTS / VOL. 01</span><h1 id="page-title">NOW PLAYING.<br />PALINA SKAKUN</h1><p>${intro}</p><a class="screen-button" href="#${path}"><span aria-hidden="true">▶</span> ${label}</a></div><div class="portrait-composition dvd-case-composition"><div class="portfolio-disc" aria-hidden="true"><span>DVD</span></div><div class="portrait-frame dvd-case"><div class="dvd-case-top"><span>DVD VIDEO</span></div><img src="./assets/palina.webp" alt="Palina smiling at her Michigan State graduation, beneath pink blossoms" width="400" height="400" /><div class="dvd-case-caption"><strong>PALINA SKAKUN</strong><span>THE PORTFOLIO · VOL. 01</span></div></div><div class="portrait-flower"></div></div></div><h2 class="chapter-selection-title">CHAPTER SELECTION</h2><div class="home-bottom"><a href="#artifacts"><span class="chapter-number">01</span><span>Coursework<small>AIML-500 • ARTIFACTS 01 & 02</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a><a href="#bonus"><span class="chapter-number">02</span><span>Selected projects<small>WEB, MOBILE & EXPERIMENTS</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a></div>`);
+  return wrap('home', `<div class="home-grid dvd-title-menu"><div class="home-copy"><span class="eyebrow">PALINASONIC PRESENTS / VOL. 01</span><h1 id="page-title">NOW PLAYING.<br />PALINA SKAKUN</h1><p>${intro}</p><a class="screen-button" href="#${path}"><span aria-hidden="true">▶</span> ${label}</a></div><div class="portrait-composition dvd-case-composition"><div class="portfolio-disc" aria-hidden="true"><span>DVD</span></div><div class="portrait-frame dvd-case"><div class="dvd-case-top"><span>DVD VIDEO</span></div><img src="./assets/palina.webp" alt="Palina smiling at her Michigan State graduation, beneath pink blossoms" width="400" height="400" /><div class="dvd-case-caption"><strong>PALINA SKAKUN</strong><span>THE PORTFOLIO · VOL. 01</span></div></div><div class="portrait-flower"></div></div></div><h2 class="chapter-selection-title">CHAPTER SELECTION</h2><div class="home-bottom"><a href="#artifacts"><span class="chapter-number">01</span><span>Coursework<small>AIML-500 • ARTIFACTS 01–03</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a><a href="#bonus"><span class="chapter-number">02</span><span>Selected projects<small>WEB, MOBILE & EXPERIMENTS</small></span><span class="chapter-arrow" aria-hidden="true">▶</span></a></div>`);
 }
 
 function aboutView() {
@@ -144,7 +145,7 @@ function artifactView() {
       </div></details>
     </div>
     <h2 class="section-title">FUTURE COURSE ARTIFACTS</h2>
-    <div class="coming-slots">${[3, 4, 5].map(n => `<div><b>0${n}</b><span>FUTURE COURSE ARTIFACT</span></div>`).join('')}</div>
+    <div class="coming-slots">${[4, 5].map(n => `<div><b>0${n}</b><span>FUTURE COURSE ARTIFACT</span></div>`).join('')}</div>
   `);
 }
 
@@ -316,9 +317,9 @@ function updateScrollHint() {
 
 function render(target, focus = true) {
   resetPowerTransition();
-  const requested = [...routes, 'profiles', 'screensaver', 'reflection', 'timeline'].includes(target) ? target : 'profiles';
+  const requested = [...routes, 'profiles', 'screensaver', 'reflection', 'timeline', 'model-choice'].includes(target) ? target : 'profiles';
   const valid = requested === 'reflection' && audience !== 'professor' ? 'artifacts' : requested;
-  const activeChapter = ['reflection', 'timeline'].includes(valid) ? 'artifacts' : valid;
+  const activeChapter = ['reflection', 'timeline', 'model-choice'].includes(valid) ? 'artifacts' : valid;
   if (valid !== 'screensaver') previousRoute = valid;
   route = valid;
   document.querySelectorAll('.header-nav a').forEach(link => {
@@ -332,13 +333,13 @@ function render(target, focus = true) {
   powered = true;
   $('#television').classList.remove('powered-off');
   updatePowerControls();
-  const views = { profiles: profileView, home: homeView, about: aboutView, artifacts: artifactView, timeline: timelineView, reflection: reflectionView, bonus: bonusView, contact: contactView, screensaver: saverView };
+  const views = { profiles: profileView, home: homeView, about: aboutView, artifacts: artifactView, timeline: timelineView, 'model-choice': () => wrap('artifacts', courseworkMenu('model-choice') + modelChoiceContent()), reflection: reflectionView, bonus: bonusView, contact: contactView, screensaver: saverView };
   content.innerHTML = views[valid]();
   content.scrollTop = 0;
   $('#channel-label').innerHTML = `${valid === 'screensaver' ? 'DVD' : 'AV 1'} <span class="osd-small">STEREO</span>`;
   $('#osd-right').textContent = valid === 'profiles' ? 'DVD / PORTFOLIO' : valid === 'screensaver' ? 'DVD SCREENSAVER' : valid === 'reflection' ? 'REFLECTION' : `CH ${String(routes.indexOf(activeChapter) + 1).padStart(2, '0')} / ${routeNames[valid]}`;
   $('#deck-status').textContent = routeNames[valid];
-  document.title = `${({profiles:'Choose your channel',home:'Main menu',about:'About Palina',artifacts:'Boredom Buster AI · Artifact 1',timeline:'AI & ML Timeline · Artifact 2',reflection:'Artifact 1 · My reflection',bonus:'Selected projects',contact:'Contact',screensaver:'Waiting for the corner'})[valid]} — Palina Skakun · Palinasonic`;
+  document.title = `${({profiles:'Choose your channel',home:'Main menu',about:'About Palina',artifacts:'Boredom Buster AI · Artifact 1',timeline:'AI & ML Timeline · Artifact 2','model-choice':'ML vs. Deep Learning · Artifact 3',reflection:'Artifact 1 · My reflection',bonus:'Selected projects',contact:'Contact',screensaver:'Waiting for the corner'})[valid]} — Palina Skakun · Palinasonic`;
   if (!motionPaused && focus) {
     clearTimeout(transitionTimer);
     screen.classList.remove('channel-changing');
@@ -497,7 +498,7 @@ document.addEventListener('click', async (event) => {
     else if (action === 'menu') navigate('profiles');
     else if (action === 'back') navigate(route === 'profiles' ? 'home' : 'profiles');
     else {
-      const index = routes.indexOf(route === 'timeline' || route === 'reflection' ? 'artifacts' : route);
+      const index = routes.indexOf(['timeline', 'reflection', 'model-choice'].includes(route) ? 'artifacts' : route);
       navigate(index < 0 ? (action === 'previous' ? 'contact' : 'home') : routes[(index + (action === 'previous' ? -1 : 1) + routes.length) % routes.length]);
     }
   }

@@ -4564,3 +4564,26 @@ body.reading-mode.screensaver-active {
   .timeline-milestones li { grid-template-columns: 1fr; gap: 8px; }
   .timeline-evidence { font-size: 18px; }
 }
+
+/* Disc 03: keep the comparison readable in the TV and in reading view. */
+.coursework-menu { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.coursework-menu strong { overflow-wrap: anywhere; }
+.model-choice-cover { background: #dfbba5; color: #3c2e34; }
+.model-choice-mark { font: 32px/1.6 var(--mono); margin: 20px 0; }
+.model-choice-mark span { color: #68506e; }
+.model-comparison { margin: 40px 0; font-size: 20px; line-height: 1.65; }
+.comparison-table-wrap { overflow-x: auto; border: 1px solid #796681; border-radius: 5px; }
+.model-comparison-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 18px; }
+.model-comparison-table caption { padding: 18px; text-align: left; font: 16px/1.6 var(--mono); }
+.model-comparison-table th, .model-comparison-table td { text-align: left; vertical-align: top; padding: 18px; border-top: 1px solid #796681; overflow-wrap: anywhere; }
+.model-comparison-table thead { background: #c3aed421; }
+.model-comparison-table th:first-child { width: 24%; }
+.model-comparison-table th { font-weight: 700; }
+@media (max-width: 900px) {
+  .coursework-menu { grid-template-columns: 1fr; }
+}
+@media (max-width: 650px) {
+  .model-comparison { font-size: 18px; }
+  .model-comparison-table { min-width: 560px; font-size: 16px; }
+  .model-comparison-table th, .model-comparison-table td { padding: 12px; }
+}
